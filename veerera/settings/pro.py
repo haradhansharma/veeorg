@@ -1,19 +1,5 @@
 
 import os
-from . import BASE_DIR
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 from .settings_email import *

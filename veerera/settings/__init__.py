@@ -122,6 +122,12 @@ if DEBUG:
 else:
     from .pro import *
     
+    
+import logging
+log =  logging.getLogger('log')
+
+log.error(f'___________debug_______________________{DEBUG}')
+    
 
     
     
