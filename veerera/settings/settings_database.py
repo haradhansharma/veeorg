@@ -1,4 +1,4 @@
-import os, dotenv
+import os
 
 if os.getenv('ENVIRONMENT') == 'production':
     DATABASES = {

@@ -61,7 +61,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import dotenv
 dotenv.load_dotenv()
 
-ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
+# ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
+ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
+
 
 if ENVIRONMENT == 'production':
     from .pro import *
