@@ -1,7 +1,10 @@
 import os
 import ast
 DEBUG = ast.literal_eval(os.getenv('DEBUG', 'False'))
+import logging
+log =  logging.getLogger('log')
 
+log.error(f'___________debug_______________________{DEBUG}')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
