@@ -1,6 +1,9 @@
 
 
-from . import BASE_DIR, os
+from . import BASE_DIR
+import os
+import dotenv
+dotenv.load_dotenv()
 
 FORMATTERS = (
     {

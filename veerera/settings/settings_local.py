@@ -1,6 +1,7 @@
 
 import os
-
+import dotenv
+dotenv.load_dotenv()
 LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Asia/Dhaka'
 USE_I18N = True
