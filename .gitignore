@@ -12,9 +12,9 @@ db.sqlite3
 veerera/settings
 
 cache/*
-!cache
+!cache/.gitkeep
 
 logs/*
-!logs
+!logs/.gitkeep
 staticfiles
-logssss
+
