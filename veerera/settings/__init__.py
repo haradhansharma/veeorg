@@ -1,13 +1,30 @@
 import os
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
+import dotenv
+dotenv.load_dotenv()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+
+DEBUG = os.getenv('DEBUG')
+
 SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
 if not SECRET_KEY:
     raise ValueError("No DJANGO_SECRET_KEY set for production!")
+
+if DEBUG:
+    ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ["*"])
+    CSRF_TRUSTED_ORIGINS = os.getenv(
+        "CSRF_TRUSTED_ORIGINS", "https://127.0.0.1 https://localhost"
+    ).split(" ")
+else:
+    ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "veerera.org www.veerera.org").split(" ")
+    CSRF_TRUSTED_ORIGINS = os.getenv(
+        "CSRF_TRUSTED_ORIGINS", "https://veerera.org"
+    ).split(" ")
+
 
 SITE_ID=1
 
@@ -23,9 +40,39 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'core',
     'django.contrib.sitemaps',
-    'captcha',       
-    
+    'captcha',          
 ]
+
+if DEBUG:
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.contrib.sites.middleware.CurrentSiteMiddleware',
+        # 'django.middleware.cache.UpdateCacheMiddleware',  #new    
+        'django.middleware.common.CommonMiddleware',
+        # 'django.middleware.cache.FetchFromCacheMiddleware', #new    
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django_user_agents.middleware.UserAgentMiddleware',
+    ]
+else:
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.contrib.sites.middleware.CurrentSiteMiddleware',
+        'django.middleware.cache.UpdateCacheMiddleware',  #new    
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.cache.FetchFromCacheMiddleware', #new    
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django_user_agents.middleware.UserAgentMiddleware',
+    ]
+
+
 
 
 ROOT_URLCONF = 'veerera.urls'
@@ -49,25 +96,31 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'veerera.wsgi.application'
 
+from .settings_database import *
+from .settings_local import *
+
 
 STATIC_URL = '/static/'
 
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import dotenv
-dotenv.load_dotenv()
-
-# ENVIRONMENT = os.environ.get('ENVIRONMENT', 'development')
-ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
 
-if ENVIRONMENT == 'production':
-    from .pro import *
-else:
+if DEBUG:
     from .dev import *
+else:
+    from .pro import *
+    
+
     
     
