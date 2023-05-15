@@ -1,0 +1,6 @@
+{% load core %}
+{% if blog|is_liked_by_user_or_ip:request  %}
+<a class="btn btn-outline-success border-0" hx-indicator="#likespinner" hx-target="#total_likes_block" hx-swap="innerHTML" hx-get="{{ blog.like_or_dislike_url|add_action:'dislike' }}"><i class="fa-solid fa-thumbs-up"></i> {{ blog.total_like }}</a> 
+{% else %}
+<a class="btn btn-outline-warning border-0" hx-indicator="#likespinner" hx-target="#total_likes_block" hx-swap="innerHTML" hx-get="{{ blog.like_or_dislike_url|add_action:'like' }}"><i class="fa-regular fa-thumbs-up"></i> {{ blog.total_like }}</a>
+{% endif %}

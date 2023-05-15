@@ -1,0 +1,50 @@
+{% load static %}
+{% load i18n %}
+
+<div class="container">
+  <div class="d-flex justify-content-between align-items-end">
+    <div>
+      <div class="d-flex align-items-end">
+        <img src="{{site_data.mask_icon}}" alt="{{ site_data.name }}" title ="{{ site_data.name }}" width="80px" class="img-fluid">
+        
+      </div>
+      <div>
+        &copy; {% trans "Veerera.org" %}
+      </div>
+    </div>
+    <div>
+      <ul class="nav nav-pills">
+        {% for fm in footer_menu %}
+        <li class="nav-item"><a class="nav-link link-primary {% if fm.url == request.path %} active {% endif %}" href="{{fm.url}}">{{fm.title}}</a></li>  
+        {% endfor %}  
+      </ul>
+    </div>
+    
+  </div>
+  
+</div>
+<hr>
+<div class="d-flex justify-content-between align-items-start">
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

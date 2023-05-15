@@ -1,0 +1,98 @@
+{% extends 'layouts/base.html' %}
+{% load core %}
+{% block header %}
+    {% include 'layouts/header.html' %}
+{% endblock %}
+{% block topsec %}
+<div class="text-center bg-light p-4 ">
+    <div class="d-block mx-auto mb-1">
+        {{category.icon|safe}}
+    </div>
+    <h1 class="display-5 fw-bold">{{category.title}}</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">{{category.description}}</p>
+     
+    </div>
+  </div>
+
+{% endblock %}
+{% block content %}
+<div class="container p-0">
+    <div class="row justify-content-center g-4">
+    {% for blog in blogs %}
+        <div class="col-md-6 d-flex">
+            <div class="card border-0">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <a class="link-danger text-decoration-none" href="{{blog.get_absolute_url}}">
+                            <img src="{{blog.feature.url}}" class="img-fluid rounded-start" alt="{{blog.title}}" title="{{blog.title}}">
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div class="card-body">
+                        <h5 class="card-title">
+                            <a class="link-danger text-decoration-none" href="{{blog.get_absolute_url}}">
+                                {{blog.title|upper}} {% if not blog.should_as_it_is %}{{blog.job_area|get_country_list}}{% endif %}
+                            </a>
+                        </h5>
+                        <p class="card-text">{{blog.body|safe|striptags|truncatechars:280}}</p>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+<div>
+</div>
+
+<div>
+</div>
+
+{% if category.slug == 'technology' %}
+<div id="amzn-assoc-ad-940586b9-a803-496c-96d5-e1563d9dc929"></div>
+<script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=940586b9-a803-496c-96d5-e1563d9dc929"></script>
+{% endif %}
+
+{% if category.slug == 'travel' %}
+<div id="amzn-assoc-ad-3a53bdec-475a-4fd9-ad9a-c9db2055f4fe"></div>
+<script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=3a53bdec-475a-4fd9-ad9a-c9db2055f4fe"></script>
+{% endif %}
+
+
+
+{% if category.slug == 'scholarships' %}
+<div id="amzn-assoc-ad-0e7a0e60-9452-4921-9ac2-015dedb978a2"></div>
+<script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=0e7a0e60-9452-4921-9ac2-015dedb978a2"></script>
+
+{% endif %}
+
+{% if category.slug == 'business' %}
+<div id="amzn-assoc-ad-971cc9d0-4714-417c-b04c-6495394fb35f"></div>
+<script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=971cc9d0-4714-417c-b04c-6495394fb35f"></script>
+{% endif %}
+
+{% if category.slug == 'job-career' %}
+<div id="amzn-assoc-ad-559ac3f2-2c34-47f3-a4f2-0077e374c446"></div>
+<script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=559ac3f2-2c34-47f3-a4f2-0077e374c446"></script>
+
+{% endif %}
+
+
+
+
+{% include 'includes/pagination.html' with page=blogs %}
+
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'layouts/footer.html' %}
+{% endblock %}
+
+{% block extra_body %}
+    
+{% endblock %}

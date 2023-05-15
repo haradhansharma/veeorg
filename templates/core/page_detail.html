@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+{% load core %}
+{% block header %}
+    {% include 'layouts/header.html' %}
+{% endblock %}
+{% block topsec %}
+<div class="text-center bg-light p-4 ">
+    
+    <h1 class="display-5 fw-bold">{{page.title}}</h1>
+    
+  </div>
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="container p-0 ">
+    <div class="row justify-content-center g-4">
+        {{page.body|safe}}
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'layouts/footer.html' %}
+{% endblock %}
+
+{% block extra_body %}
+   
+    
+{% endblock %}

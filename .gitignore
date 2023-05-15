@@ -1,0 +1,15 @@
+*.pyc  
+*~  
+__pycache__  
+env
+.env
+.env.development
+.env.production
+.vscode
+theme
+.DS_Store  
+db.sqlite3
+veerera/settings
+cache/*
+logs/*
+staticfiles

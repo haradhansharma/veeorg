@@ -1,0 +1,91 @@
+{% extends 'layouts/base.html' %}
+{% load core %}
+{% block header %}
+    {% include 'layouts/header.html' %}
+{% endblock %}
+{% block extra_head %}
+<style>
+    .apply-indicator, .likespinner{
+        display:none;
+      }
+      .htmx-request .apply-indicator, .htmx-request .likespinner{
+        display:inline;
+      }
+      .htmx-request.apply-indicator, .htmx-request.likespinner{
+        display:inline;
+      }
+      
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="container p-0">
+    <div class="row justify-content-center g-0">   
+        <img src="{{blog.feature.url}}" class="img-fluid rounded-start" alt="{{blog.title}}" title="{{blog.title}}">
+        <h1 class="text-capitalize">{{blog.title}}</h1>
+        <div class="col-12 p-2 bg-light d-flex">            
+            <a class="btn btn-light" href = "mailto: {{blog.creator.email}}">&copy; {{ blog.creator.get_full_name }}</a>
+            <div class="btn btn-light"><i class="fa-solid fa-eye"></i> {{ blog.total_view }} </div>
+            <div id="total_likes_block">
+                {% if blog|is_liked_by_user_or_ip:request  %}
+                <a class="btn btn-outline-success border-0" hx-indicator="#likespinner" hx-target="#total_likes_block" hx-swap="innerHTML" hx-get="{{ blog.like_or_dislike_url|add_action:'dislike' }}"><i class="fa-solid fa-thumbs-up"></i> {{ blog.total_like }}</a> 
+                {% else %}
+                <a class="btn btn-outline-warning border-0" hx-indicator="#likespinner" hx-target="#total_likes_block" hx-swap="innerHTML" hx-get="{{ blog.like_or_dislike_url|add_action:'like' }}"><i class="fa-regular fa-thumbs-up"></i> {{ blog.total_like }}</a>
+                {% endif %}
+            </div>
+            <div id="likespinner" class="col-auto likespinner">                                                
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div> 
+        <div class="col-12">
+            {{output_string|safe}}
+        </div>
+        {% if blog.should_have_apf %}
+
+        <div id="applyspinner" class="col-auto apply-indicator">                                                
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        
+        <div id="apply_response" class="text-center">     
+        </div> 
+
+        <div class="col-12">
+            <h2 class="text-danger text-uppercase"> Application Form </h2>
+            <form 
+            method="POST" 
+            enctype="multipart/form-data"
+            hx-post="{% url 'core:success' %}" 
+            hx-target="#apply_response"            
+            hx-indicator="#applyspinner"
+            >
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" id="btn_cv"  class="btn btn-success btn-block" value = "submit"/>
+                
+            </form>
+        </div>    
+        {% endif %}
+    </div>
+</div>
+<div class="btn-group mt-3 g-3">
+    {% if blog.get_previous_by_created_at %}
+        <a class="btn btn-light" href="{{blog.get_previous_by_created_at.get_absolute_url}}"><i class="fa-solid fa-arrow-left"></i>PREVIOUS POST</a>
+    {% endif %}
+    {% if blog.get_next_by_created_at %}
+        <a class="btn btn-light" href="{{blog.get_next_by_created_at.get_absolute_url}}">NEXT POST<i class="fa-solid fa-arrow-right"></i></a>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'layouts/footer.html' %}
+{% endblock %}
+
+
+
