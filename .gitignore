@@ -14,7 +14,5 @@ veerera/settings
 cache/*
 !cache/.gitkeep
 
-logs/*
-!logs/.gitkeep
 staticfiles
 
