@@ -50,7 +50,7 @@ from .settings_summernote import *
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/var/tmp/veerera_cache',
+        'LOCATION': os.getenv('CACHE_LOCATION'),
         'TIMEOUT': 3600,
         'OPTIONS': {
             'MAX_ENTRIES': 1000
