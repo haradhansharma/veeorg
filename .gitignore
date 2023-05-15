@@ -10,8 +10,11 @@ theme
 .DS_Store  
 db.sqlite3
 veerera/settings
-!cache/
+
 cache/*
-!logs/
+!cache/
+
 logs/*
+!logs/
 staticfiles
+logssss
