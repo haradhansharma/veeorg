@@ -1,7 +1,7 @@
 import os
 import ast
-import dotenv
-dotenv.load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 DEBUG = ast.literal_eval(os.getenv('DEBUG', 'False'))
 
 DATABASES = {

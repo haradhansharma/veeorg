@@ -1,6 +1,6 @@
 import os
-import dotenv
-dotenv.load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT= os.getenv('EMAIL_PORT')
