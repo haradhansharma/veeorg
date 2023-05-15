@@ -1,1 +1,6 @@
 
+INFO 2023-05-15 22:14:56,078 django.utils.autoreload MainThread 19512 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 3100 Watching for file changes with StatReloader
+INFO 2023-05-15 22:15:30,630 django.utils.autoreload MainThread 19512 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 3100 F:\django\veereraorg\veerera\settings\settings_database.py changed, reloading.
+INFO 2023-05-15 22:15:31,390 django.utils.autoreload MainThread 4328 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 18732 Watching for file changes with StatReloader
+INFO 2023-05-15 22:16:52,317 django.utils.autoreload MainThread 4328 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 18732 F:\django\veereraorg\veerera\settings\settings_database.py changed, reloading.
+INFO 2023-05-15 22:18:01,059 django.utils.autoreload MainThread 20276 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 19848 Watching for file changes with StatReloader

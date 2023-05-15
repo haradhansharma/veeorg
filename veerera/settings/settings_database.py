@@ -1,5 +1,8 @@
 import os
-DEBUG = os.getenv('DEBUG')
+import ast
+DEBUG = ast.literal_eval(os.getenv('DEBUG', 'False'))
+print(DEBUG)
+print(type(DEBUG))
 if DEBUG:
     DATABASES = {
         'default': {
