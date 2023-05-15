@@ -3,11 +3,11 @@ from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 import ast
 from dotenv import load_dotenv
-load_dotenv()
+# load_dotenv()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 DEBUG = ast.literal_eval(os.getenv('DEBUG', 'False'))
 
