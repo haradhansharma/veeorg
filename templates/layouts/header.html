@@ -2,10 +2,9 @@
 
 
     <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
-      <div class="d-flex justify-content-start align-items-center">
-        
+      <div class="d-flex justify-content-start align-items-center">        
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-dark text-decoration-none">
-          <img src="{{site_data.logo}}" alt="{{ site_data.name }}" title ="{{ site_data.name }}" width="200px">
+          <img src="{{site_data.logo}}" alt="{{ site_data.name }}" title ="{{ site_data.name }}" width="160px">
         </a>
       </div>
 
@@ -18,16 +17,14 @@
                 <li class="nav-item"><a class="nav-link link-primary {% if hm.url == request.path %} active {% endif %}" href="{{hm.url}}">{{hm.title}}</a></li>  
               {% endif %}
 
-              {% if hm.data_set and not hm.url %}
-          
+              {% if hm.data_set and not hm.url %}          
               <div class="flex-shrink-0 dropdown">
                 <li class="nav-item" id="dropmenus" data-bs-toggle="dropdown" aria-expanded="false">
                 <a  href="#" class="nav-link link-primary" >
                   {{hm.title}}
                 </a>
               </li>  
-                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropmenus" >
-                 
+                <ul class="dropdown-menu text-small shadow" aria-labelledby="dropmenus" >                 
                   {% for ds in hm.data_set %}
                   <li><a class="dropdown-item" href="{{ds.url}}">{{ds.title}}</a></li>          
                   {% endfor %}

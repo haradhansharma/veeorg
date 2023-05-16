@@ -27,7 +27,7 @@
             </div>
         </header>
     
-   
+    
     
     {% block drc %}
     <div class="offcanvas offcanvas-end d-md-none sidebarDiv3" tabindex="-1" id="drc" aria-labelledby="drcLabel">
@@ -37,9 +37,29 @@
       </div>
       <div class="offcanvas-body ps-0 d-flex flex-column ">
         {% for hm in header_menu %}
-        <a href="{{hm.url}}" type="button" class="btn btn-light position-relative ps-5 mb-2 text-start {% if hm.url == request.path %} active {% endif %}">
-          {{hm.title}}          
-        </a>
+        {% if hm.url and not hm.data_set %}
+          <a href="{{hm.url}}" type="button" class="btn btn-light position-relative ps-5 mb-2 text-start {% if hm.url == request.path %} active {% endif %}">
+            {{hm.title}}          
+          </a>
+        {% endif %}
+        {% if hm.data_set and not hm.url %}   
+
+      
+          <button class="btn btn-light position-relative ps-5 mb-2 text-start" data-bs-toggle="collapse" data-bs-target="#mobilemenu-collapse" aria-expanded="true">
+            {{hm.title}}
+          </button>
+          <div class="collapse ms-5" id="mobilemenu-collapse">
+            
+              {% for ds in hm.data_set %}
+                <a href="{{ds.url}}" class="btn btn-light position-relative ps-7 mb-2 text-start {% if hm.url == request.path %} active {% endif %}">{{ds.title}}</a>
+              {% endfor %}
+           
+          </div>
+     
+        
+        
+        
+          {% endif %}
         {% endfor %}  
       </div>
     </div>

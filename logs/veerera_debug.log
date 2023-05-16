@@ -210,3 +210,278 @@ INFO 2023-05-16 08:32:46,078 django.server Thread-2 (process_request_thread) 121
 INFO 2023-05-16 08:32:46,085 django.server Thread-4 (process_request_thread) 12848 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12404 "GET /media/blog/feature_image/emerging_market.jpg HTTP/1.1" 304 0
 INFO 2023-05-16 08:32:46,091 django.server Thread-5 (process_request_thread) 16756 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12404 "GET /media/blog/feature_image/stdnjb.jpg HTTP/1.1" 304 0
 INFO 2023-05-16 08:32:46,092 django.server Thread-2 (process_request_thread) 1216 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12404 "GET /media/blog/feature_image/finandvisaspon.jpg HTTP/1.1" 304 0
+INFO 2023-05-16 14:31:15,387 django.utils.autoreload MainThread 18448 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 18792 Watching for file changes with StatReloader
+INFO 2023-05-16 14:36:20,595 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET / HTTP/1.1" 200 24269
+INFO 2023-05-16 14:36:20,646 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/style.css HTTP/1.1" 304 0
+INFO 2023-05-16 14:36:20,692 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/vendor/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2023-05-16 14:36:20,767 django.server Thread-2 (process_request_thread) 10376 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/blog/feature_image/gigworks.jpg HTTP/1.1" 304 0
+INFO 2023-05-16 14:36:20,770 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/site_image/logo_turguise.png HTTP/1.1" 304 0
+INFO 2023-05-16 14:36:20,777 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/blog/feature_image/indemandskil.jpg HTTP/1.1" 304 0
+INFO 2023-05-16 14:36:20,830 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/site_image/svg_logo.svg HTTP/1.1" 304 0
+INFO 2023-05-16 14:36:38,740 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET / HTTP/1.1" 200 24269
+INFO 2023-05-16 14:36:40,932 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/site_image/favicon_2.ico HTTP/1.1" 304 0
+INFO 2023-05-16 14:36:53,253 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 30708
+INFO 2023-05-16 14:36:53,435 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/blog/feature_image/vsass.jpg HTTP/1.1" 304 0
+WARNING 2023-05-16 14:37:39,388 django.security.SuspiciousSession Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 18792 Session data corrupted
+ERROR 2023-05-16 14:37:39,452 django.request Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 18792 Internal Server Error: /category/job-career
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 85, in category_detail
+    return render(request, template_name, context=context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'bool' object is not iterable
+ERROR 2023-05-16 14:37:39,452 django.request Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 18792 Internal Server Error: /category/job-career
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 85, in category_detail
+    return render(request, template_name, context=context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+TypeError: 'bool' object is not iterable
+ERROR 2023-05-16 14:37:39,465 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 500 208382
+ERROR 2023-05-16 14:37:39,465 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 500 208382
+INFO 2023-05-16 14:38:35,635 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 30708
+INFO 2023-05-16 14:38:41,115 django.server Thread-3 (process_request_thread) 9448 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin HTTP/1.1" 301 0
+WARNING 2023-05-16 14:38:41,126 django.security.SuspiciousSession Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 18792 Session data corrupted
+INFO 2023-05-16 14:38:41,142 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/ HTTP/1.1" 302 0
+WARNING 2023-05-16 14:38:41,152 django.security.SuspiciousSession Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 18792 Session data corrupted
+INFO 2023-05-16 14:38:41,243 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4182
+INFO 2023-05-16 14:38:41,373 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+WARNING 2023-05-16 14:38:43,062 django.security.SuspiciousSession Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 18792 Session data corrupted
+INFO 2023-05-16 14:38:43,472 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4352
+WARNING 2023-05-16 14:38:49,164 django.security.SuspiciousSession Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 18792 Session data corrupted
+INFO 2023-05-16 14:38:49,731 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-05-16 14:38:49,844 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/ HTTP/1.1" 200 12231
+INFO 2023-05-16 14:38:49,871 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2023-05-16 14:38:49,888 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-05-16 14:38:55,343 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/core/page/ HTTP/1.1" 200 11761
+INFO 2023-05-16 14:38:55,378 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-05-16 14:38:58,862 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/core/page/5/change/ HTTP/1.1" 200 21607
+INFO 2023-05-16 14:38:58,895 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-05-16 14:38:58,895 django.server Thread-2 (process_request_thread) 10376 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:58,928 django.server Thread-2 (process_request_thread) 10376 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/admin/img/tooltag-arrowright.svg HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,012 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /summernote/editor/id_body/ HTTP/1.1" 200 7701
+INFO 2023-05-16 14:38:59,052 django.server Thread-2 (process_request_thread) 10376 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/django_summernote.css HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,052 django.server Thread-1 (process_request_thread) 11972 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/summernote-bs4.min.css HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,054 django.server Thread-5 (process_request_thread) 15592 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/jquery.iframe-transport.js HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,056 django.server Thread-4 (process_request_thread) 20124 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/jquery.ui.widget.js HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,059 django.server Thread-6 (process_request_thread) 18480 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/jquery.fileupload.js HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,068 django.server Thread-2 (process_request_thread) 10376 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/ResizeSensor.js HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,074 django.server Thread-7 (process_request_thread) 11308 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/summernote-bs4.min.js HTTP/1.1" 304 0
+INFO 2023-05-16 14:38:59,190 django.server Thread-7 (process_request_thread) 11308 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/lang/summernote-en-US.min.js?_=1684226339102 HTTP/1.1" 200 4607
+INFO 2023-05-16 14:38:59,324 django.server Thread-7 (process_request_thread) 11308 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /static/summernote/font/summernote.woff2 HTTP/1.1" 304 0
+INFO 2023-05-16 14:39:09,290 django.server Thread-7 (process_request_thread) 11308 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "POST /admin/core/page/5/change/ HTTP/1.1" 302 0
+INFO 2023-05-16 14:39:09,380 django.server Thread-7 (process_request_thread) 11308 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/core/page/ HTTP/1.1" 200 11959
+INFO 2023-05-16 14:39:09,426 django.server Thread-7 (process_request_thread) 11308 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-05-16 14:39:15,945 django.server Thread-7 (process_request_thread) 11308 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31878
+INFO 2023-05-16 14:49:15,776 django.server Thread-8 (process_request_thread) 16900 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31882
+INFO 2023-05-16 14:49:15,962 django.server Thread-8 (process_request_thread) 16900 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/blog/feature_image/resume.jpg HTTP/1.1" 304 0
+INFO 2023-05-16 14:49:15,974 django.server Thread-9 (process_request_thread) 6104 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /media/blog/feature_image/crossborder.jpg HTTP/1.1" 304 0
+INFO 2023-05-16 14:50:44,472 django.server Thread-9 (process_request_thread) 6104 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31867
+INFO 2023-05-16 14:51:38,141 django.server Thread-9 (process_request_thread) 6104 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31858
+INFO 2023-05-16 14:53:49,533 django.server Thread-9 (process_request_thread) 6104 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31822
+INFO 2023-05-16 14:55:11,572 django.server Thread-9 (process_request_thread) 6104 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31816
+INFO 2023-05-16 14:55:43,650 django.server Thread-9 (process_request_thread) 6104 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31816
+INFO 2023-05-16 14:56:34,932 django.server Thread-9 (process_request_thread) 6104 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18792 "GET /category/job-career HTTP/1.1" 200 31821
+INFO 2023-05-16 14:57:49,558 django.utils.autoreload MainThread 18448 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 18792 F:\django\veereraorg\core\menus.py changed, reloading.
+INFO 2023-05-16 14:57:50,208 django.utils.autoreload MainThread 14204 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 14936 Watching for file changes with StatReloader
+INFO 2023-05-16 14:58:26,638 django.utils.autoreload MainThread 14204 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 14936 F:\django\veereraorg\core\models.py changed, reloading.
+INFO 2023-05-16 14:58:27,284 django.utils.autoreload MainThread 1272 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 18636 Watching for file changes with StatReloader
+INFO 2023-05-16 14:58:31,872 django.server Thread-1 (process_request_thread) 4216 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 18636 "GET /category/job-career HTTP/1.1" 200 31821
+INFO 2023-05-16 15:01:40,902 django.utils.autoreload MainThread 1272 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 18636 F:\django\veereraorg\core\menus.py changed, reloading.
+INFO 2023-05-16 15:01:41,544 django.utils.autoreload MainThread 16460 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 20016 Watching for file changes with StatReloader
+WARNING 2023-05-16 15:01:47,031 django.security.SuspiciousSession Thread-1 (process_request_thread) 17692 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 20016 Session data corrupted
+ERROR 2023-05-16 15:01:47,077 django.request Thread-1 (process_request_thread) 17692 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 20016 Internal Server Error: /category/job-career
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 85, in category_detail
+    return render(request, template_name, context=context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Haradhan Sharma\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "F:\django\veereraorg\core\context_processor.py", line 61, in core_con
+    'header_menu' : header_menu(request),
+  File "F:\django\veereraorg\core\menus.py", line 94, in header_menu
+    'url' : reverse(obj.get_absolute_url()),
+  File "F:\django\veereraorg\env\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "F:\django\veereraorg\env\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '/category/business' not found. '/category/business' is not a valid view function or pattern name.
+ERROR 2023-05-16 15:01:47,077 django.request Thread-1 (process_request_thread) 17692 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 20016 Internal Server Error: /category/job-career
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 85, in category_detail
+    return render(request, template_name, context=context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Haradhan Sharma\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "F:\django\veereraorg\env\lib\site-packages\django\template\context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "F:\django\veereraorg\core\context_processor.py", line 61, in core_con
+    'header_menu' : header_menu(request),
+  File "F:\django\veereraorg\core\menus.py", line 94, in header_menu
+    'url' : reverse(obj.get_absolute_url()),
+  File "F:\django\veereraorg\env\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "F:\django\veereraorg\env\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '/category/business' not found. '/category/business' is not a valid view function or pattern name.
+ERROR 2023-05-16 15:01:47,090 django.server Thread-1 (process_request_thread) 17692 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 20016 "GET /category/job-career HTTP/1.1" 500 136847
+ERROR 2023-05-16 15:01:47,090 django.server Thread-1 (process_request_thread) 17692 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 20016 "GET /category/job-career HTTP/1.1" 500 136847
+INFO 2023-05-16 15:02:15,896 django.utils.autoreload MainThread 16460 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 20016 F:\django\veereraorg\core\menus.py changed, reloading.
+INFO 2023-05-16 15:02:16,547 django.utils.autoreload MainThread 4208 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 20408 Watching for file changes with StatReloader
+INFO 2023-05-16 15:02:47,813 django.utils.autoreload MainThread 4208 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 20408 F:\django\veereraorg\core\menus.py changed, reloading.
+INFO 2023-05-16 15:02:48,481 django.utils.autoreload MainThread 16568 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 1040 Watching for file changes with StatReloader
+INFO 2023-05-16 15:02:51,543 django.server Thread-1 (process_request_thread) 4852 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 1040 "GET /category/job-career HTTP/1.1" 200 31821
+INFO 2023-05-16 15:02:51,739 django.server Thread-1 (process_request_thread) 4852 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 1040 "GET /media/blog/feature_image/succe.jpg HTTP/1.1" 304 0
+INFO 2023-05-16 15:03:07,752 django.utils.autoreload MainThread 16568 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 1040 F:\django\veereraorg\core\menus.py changed, reloading.
+INFO 2023-05-16 15:03:08,389 django.utils.autoreload MainThread 8608 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 13252 Watching for file changes with StatReloader
+INFO 2023-05-16 15:04:05,708 django.server Thread-1 (process_request_thread) 7692 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 13252 "GET /category/job-career HTTP/1.1" 200 31821
+INFO 2023-05-16 15:04:40,260 django.utils.autoreload MainThread 8608 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 266 trigger_reload 13252 F:\django\veereraorg\core\menus.py changed, reloading.
+INFO 2023-05-16 15:04:40,904 django.utils.autoreload MainThread 3356 F:\django\veereraorg\env\lib\site-packages\django\utils\autoreload.py 668 run_with_reloader 12868 Watching for file changes with StatReloader
+INFO 2023-05-16 15:04:45,473 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 31807
+INFO 2023-05-16 15:05:04,170 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /p/contact-us HTTP/1.1" 200 14153
+INFO 2023-05-16 15:05:11,052 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET / HTTP/1.1" 200 25368
+INFO 2023-05-16 15:05:11,153 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /media/blog/feature_image/remote_work.jpg HTTP/1.1" 304 0
+WARNING 2023-05-16 15:05:20,112 django.security.SuspiciousSession Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 12868 Session data corrupted
+INFO 2023-05-16 15:05:20,131 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /admin/core/page/5/change/ HTTP/1.1" 302 0
+WARNING 2023-05-16 15:05:20,139 django.security.SuspiciousSession Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 12868 Session data corrupted
+INFO 2023-05-16 15:05:20,232 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /admin/login/?next=/admin/core/page/5/change/ HTTP/1.1" 200 4220
+WARNING 2023-05-16 15:05:23,071 django.security.SuspiciousSession Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 12868 Session data corrupted
+INFO 2023-05-16 15:05:23,509 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "POST /admin/login/?next=/admin/core/page/5/change/ HTTP/1.1" 200 4390
+WARNING 2023-05-16 15:05:27,806 django.security.SuspiciousSession Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\contrib\sessions\backends\base.py 108 decode 12868 Session data corrupted
+INFO 2023-05-16 15:05:28,352 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "POST /admin/login/?next=/admin/core/page/5/change/ HTTP/1.1" 302 0
+INFO 2023-05-16 15:05:28,499 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /admin/core/page/5/change/ HTTP/1.1" 200 21615
+INFO 2023-05-16 15:05:28,537 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-05-16 15:05:28,827 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /summernote/editor/id_body/ HTTP/1.1" 200 7701
+INFO 2023-05-16 15:05:28,978 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /static/summernote/lang/summernote-en-US.min.js?_=1684227928868 HTTP/1.1" 200 4607
+INFO 2023-05-16 15:05:40,568 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "POST /admin/core/page/5/change/ HTTP/1.1" 302 0
+INFO 2023-05-16 15:05:40,705 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /admin/core/page/ HTTP/1.1" 200 11959
+INFO 2023-05-16 15:05:40,753 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-05-16 15:05:44,928 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30708
+INFO 2023-05-16 15:05:55,256 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30708
+INFO 2023-05-16 15:06:17,794 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30708
+INFO 2023-05-16 15:08:14,948 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30713
+INFO 2023-05-16 15:09:08,922 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30732
+INFO 2023-05-16 15:09:52,870 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30732
+INFO 2023-05-16 15:10:38,516 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30707
+INFO 2023-05-16 15:12:07,651 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30707
+INFO 2023-05-16 15:12:10,032 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET / HTTP/1.1" 200 24268
+INFO 2023-05-16 15:12:52,892 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET / HTTP/1.1" 200 24268
+INFO 2023-05-16 15:12:57,214 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/business HTTP/1.1" 200 13408
+INFO 2023-05-16 15:12:58,064 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30707
+INFO 2023-05-16 15:12:59,499 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/business HTTP/1.1" 200 13408
+INFO 2023-05-16 15:13:04,900 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30707
+INFO 2023-05-16 15:13:07,411 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/scholarships HTTP/1.1" 200 12483
+INFO 2023-05-16 15:13:11,772 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/technology HTTP/1.1" 200 13604
+INFO 2023-05-16 15:13:23,113 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/travel HTTP/1.1" 200 13529
+INFO 2023-05-16 15:13:37,594 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET / HTTP/1.1" 200 24268
+INFO 2023-05-16 15:13:37,670 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /media/blog/feature_image/jgbbs.jpg HTTP/1.1" 304 0
+INFO 2023-05-16 15:13:42,271 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/business HTTP/1.1" 200 13408
+INFO 2023-05-16 15:13:43,430 django.server Thread-1 (process_request_thread) 7320 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 12868 "GET /category/job-career HTTP/1.1" 200 30707

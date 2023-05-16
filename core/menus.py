@@ -42,7 +42,7 @@ def page_menus(request):
     for p in all_page:
         item_dict = {
             'title' : p.title,
-            'url' : 'p.get_absolute_url()', 
+            'url' : p.get_absolute_url(), 
             'data_set': False  
         }
         menu_items.append(item_dict)        
@@ -89,6 +89,7 @@ def header_menu(request):
         {'title': 'Page', 'url': False, 'data_set': page_menus(request) },        
         ) 
     for obj in objects_with_header_menu:
+       
         item_dict = {
             'title' : obj.title,
             'url' : obj.get_absolute_url(), 
