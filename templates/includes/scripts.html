@@ -10,3 +10,22 @@
         e.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
         })
 </script>
+{% if not request.user.is_superuser or not request.user.is_staff %}
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+        });
+        
+        // Disable copy
+        document.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && (event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 85 || event.keyCode === 117)) {
+            event.preventDefault();
+            }
+        });
+        // Disable text selection
+        document.addEventListener('selectstart', function (event) {
+            event.preventDefault();
+        });
+    </script>
+{% endif %}
