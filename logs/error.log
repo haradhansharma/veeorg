@@ -1,0 +1,126 @@
+ERROR 2023-05-17 18:27:57,689 django.request Thread-1 (process_request_thread) 11252 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 22084 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 148, in blog_detail
+    for qs in indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 18:27:57,693 django.server Thread-1 (process_request_thread) 11252 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 22084 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96559
+ERROR 2023-05-17 18:28:22,939 django.request Thread-1 (process_request_thread) 16472 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 8964 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 148, in blog_detail
+    for qs in indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 18:28:22,944 django.server Thread-1 (process_request_thread) 16472 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 8964 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96544
+ERROR 2023-05-17 18:28:44,694 django.request Thread-1 (process_request_thread) 16472 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 8964 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 148, in blog_detail
+    for qs in indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 18:28:44,697 django.server Thread-1 (process_request_thread) 16472 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 8964 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96545
+ERROR 2023-05-17 18:33:03,588 django.request Thread-1 (process_request_thread) 21256 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 21476 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 148, in blog_detail
+    for qs in indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 18:33:03,606 django.server Thread-1 (process_request_thread) 21256 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 21476 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96545
+ERROR 2023-05-17 18:33:32,877 django.request Thread-1 (process_request_thread) 1688 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 9928 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 148, in blog_detail
+    for qs in indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 18:33:32,882 django.server Thread-1 (process_request_thread) 1688 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 9928 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96545
+ERROR 2023-05-17 18:40:54,468 django.request Thread-1 (process_request_thread) 15088 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 3556 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 148, in blog_detail
+    for qs in indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 18:40:54,472 django.server Thread-1 (process_request_thread) 15088 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 3556 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96549
+ERROR 2023-05-17 18:41:56,616 django.request Thread-1 (process_request_thread) 14712 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 7528 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 150, in blog_detail
+    for qs in indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 18:41:56,620 django.server Thread-1 (process_request_thread) 14712 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 7528 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96540
+ERROR 2023-05-17 19:13:41,417 django.request Thread-1 (process_request_thread) 19496 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 19532 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 145, in blog_detail
+    if indicator_links[i]:
+IndexError: list index out of range
+ERROR 2023-05-17 19:13:41,422 django.server Thread-1 (process_request_thread) 19496 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 19532 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 96247
+ERROR 2023-05-17 19:38:27,776 django.request Thread-1 (process_request_thread) 12252 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 1868 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 125, in blog_detail
+    indicator_links = blog.latest_indicator_links_blocks(len(paragraphs))
+TypeError: Blog.latest_indicator_links_blocks() missing 1 required positional argument: 'para_len'
+ERROR 2023-05-17 19:38:27,780 django.server Thread-1 (process_request_thread) 12252 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 1868 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 88285
+ERROR 2023-05-17 19:39:31,080 django.request Thread-1 (process_request_thread) 22236 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 22372 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 125, in blog_detail
+    indicator_links = blog.latest_indicator_links_blocks(len(paragraphs))
+  File "F:\django\veereraorg\core\models.py", line 352, in latest_indicator_links_blocks
+    para_len += [0] if len(para_len) % 2 != 0 else []
+TypeError: object of type 'int' has no len()
+ERROR 2023-05-17 19:39:31,085 django.server Thread-1 (process_request_thread) 22236 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 22372 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 91839
+ERROR 2023-05-17 19:40:02,743 django.request Thread-2 (process_request_thread) 15804 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 20128 Internal Server Error: /b/the-top-10-countries-for-international-job-seekers
+Traceback (most recent call last):
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\django\veereraorg\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\django\veereraorg\core\views.py", line 125, in blog_detail
+    indicator_links = blog.latest_indicator_links_blocks(len(paragraphs))
+  File "F:\django\veereraorg\core\models.py", line 352, in latest_indicator_links_blocks
+    para_len += [0] if para_len % 2 != 0 else []
+TypeError: unsupported operand type(s) for +=: 'int' and 'list'
+ERROR 2023-05-17 19:40:02,749 django.server Thread-2 (process_request_thread) 15804 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 20128 "GET /b/the-top-10-countries-for-international-job-seekers HTTP/1.1" 500 91940
+WARNING 2023-05-17 20:22:46,637 django.request Thread-1 (process_request_thread) 10588 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 16932 Not Found: /b/20
+WARNING 2023-05-17 20:22:46,639 django.server Thread-1 (process_request_thread) 10588 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 16932 "GET /b/20 HTTP/1.1" 404 3558
+WARNING 2023-05-17 20:23:31,519 django.request Thread-1 (process_request_thread) 10588 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 16932 Not Found: /b/20
+WARNING 2023-05-17 20:23:31,521 django.server Thread-1 (process_request_thread) 10588 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 16932 "GET /b/20 HTTP/1.1" 404 3558
+WARNING 2023-05-17 20:25:17,949 django.request Thread-1 (process_request_thread) 17444 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 15956 Not Found: /b/20
+WARNING 2023-05-17 20:25:17,950 django.server Thread-1 (process_request_thread) 17444 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 15956 "GET /b/20 HTTP/1.1" 404 3558
+WARNING 2023-05-17 20:25:34,278 django.request Thread-1 (process_request_thread) 17444 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 15956 Not Found: /b/20
+WARNING 2023-05-17 20:25:34,282 django.server Thread-1 (process_request_thread) 17444 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 15956 "GET /b/20 HTTP/1.1" 404 3558
+WARNING 2023-05-17 20:25:57,079 django.request Thread-3 (process_request_thread) 21680 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 15956 Not Found: /b/20
+WARNING 2023-05-17 20:25:57,080 django.server Thread-3 (process_request_thread) 21680 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 15956 "GET /b/20 HTTP/1.1" 404 3558
+WARNING 2023-05-17 20:42:44,419 django.request Thread-1 (process_request_thread) 21696 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 11836 Not Found: /favicon.ico
+WARNING 2023-05-17 20:42:44,421 django.server Thread-1 (process_request_thread) 21696 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 11836 "GET /favicon.ico HTTP/1.1" 404 5062

@@ -42,6 +42,25 @@
         <div class="col-12">
             {{output_string|safe}}
         </div>
+
+
+        <!--How to apply-->
+              
+        {% if blog.should_have_hta %}        
+        <div id="hta" class="col-12">                                                                 
+            <div hx-get="{% url 'core:hta' blog.slug %}" hx-trigger="load" hx-target="#hta" hx-swap="innerHTML"> 
+                <div class="card text-center mb-4 mt-4">                                
+                    <div class="row p-3 justify-content-center">
+                    Loading how to apply...
+                    </div>
+                </div>    
+            </div>   
+        </div>    
+        {% endif %}
+
+
+
+
         {% if blog.should_have_apf %}
 
         <div id="applyspinner" class="col-auto apply-indicator">                                                

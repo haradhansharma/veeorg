@@ -19,7 +19,7 @@ from core.mixins import (
     DateFieldModelMixin,
     ) 
 
-from .agent_helper import get_client_ip
+from .agent_helper import get_client_ip, get_para_list_from
 
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
@@ -347,17 +347,19 @@ class Blog(
         ordering = ['-created_at']
         
         
-    @property
-    def latest_indicator_links_blocks(self):
-        latest_links = self.build_indicator_link.exclude(pk=self.pk).order_by('-id')[:6]
+   
+    def latest_indicator_links_blocks(self, para_len):
+        para_len += 1 if para_len % 2 != 0 else 0
+        latest_links = self.build_indicator_link.exclude(pk=self.pk)[:para_len]
         return self._create_link_blocks(latest_links, block_size=2)
 
-    @property
-    def build_table_link_blocks(self):
-        latest_links = self.build_table_link.exclude(pk=self.pk).order_by('-id')[:6]
+    
+    def build_table_link_blocks(self, para_len):
+        para_len += 1 if para_len % 2 != 0 else 0
+        latest_links = self.build_table_link.exclude(pk=self.pk)[:para_len]
         return self._create_link_blocks(latest_links, block_size=3)
 
-    def _create_link_blocks(self, links, block_size=5):
+    def _create_link_blocks(self, links, block_size):
         blocks = []
         current_block = []
         for link in links:
@@ -375,13 +377,14 @@ class Blog(
             super().save(request, *args, **kwargs)
         else:        
             SaveFromAdminMixin.save(self, request=request, *args, **kwargs)     
-        
-        
-        latest_links = Blog.published.exclude(id=self.id).order_by('-id')
-        latest_indicator_links = latest_links[:6]
-        latest_table_links = latest_links[6:12]
-        self.build_indicator_link.add(*latest_indicator_links)
-        self.build_table_link.add(*latest_table_links)
+            
+        if not self.should_as_it_is:
+            len_of_para = len(get_para_list_from(self.body))           
+            latest_links = Blog.published.exclude(id=self.id)
+            latest_indicator_links = latest_links[:len_of_para % 2]
+            latest_table_links = latest_links[len_of_para % 2:len_of_para]
+            self.build_indicator_link.add(*latest_indicator_links)
+            self.build_table_link.add(*latest_table_links)
   
 def validate_file_size(value):
     filesize= value.size
