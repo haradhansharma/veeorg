@@ -48,7 +48,7 @@ def home(request):
         blogs = paginator.page(paginator.num_pages)  
         
     site = site_data()
-    site['name'] = '#1 blogging site for career'
+    site['name'] = 'Ultimate Resource for International Job Seekers'
     
     context = {
         'blogs' : blogs,
@@ -232,13 +232,7 @@ def blog_detail(request, slug):
                     output_list.append('<div>')
                     output_list.append('</div>')
             
-        '''        
-        HOW TO APPLY
-        '''     
-        # if blog.should_have_hta:    
-        #     # get How to block with the help of OpenAI  
-        #     how_to_block = get_hwt_block(blog)     
-        #     output_list.extend(how_to_block)          
+            
             
         
         output_string = ''.join(output_list)

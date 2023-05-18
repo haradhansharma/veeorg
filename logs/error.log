@@ -124,3 +124,5 @@ WARNING 2023-05-17 20:25:57,079 django.request Thread-3 (process_request_thread)
 WARNING 2023-05-17 20:25:57,080 django.server Thread-3 (process_request_thread) 21680 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 15956 "GET /b/20 HTTP/1.1" 404 3558
 WARNING 2023-05-17 20:42:44,419 django.request Thread-1 (process_request_thread) 21696 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 11836 Not Found: /favicon.ico
 WARNING 2023-05-17 20:42:44,421 django.server Thread-1 (process_request_thread) 21696 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 11836 "GET /favicon.ico HTTP/1.1" 404 5062
+WARNING 2023-05-18 09:26:57,093 django.request Thread-9 (process_request_thread) 5008 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 17020 Not Found: /favicon.ico
+WARNING 2023-05-18 09:26:57,095 django.server Thread-9 (process_request_thread) 5008 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 17020 "GET /favicon.ico HTTP/1.1" 404 5062

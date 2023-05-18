@@ -21,7 +21,7 @@ def site_data():
         'name' : site.site.name,
         'domain' : site.site.domain,
         'description': site.site_description,
-        'author' : site.site.domain,
+        'author' : 'Veerera.org Team',
         'meta_tag' : site.site_meta_tag,
         'favicon': site.site_favicon.url,
         'mask_icon': site.mask_icon.url,
