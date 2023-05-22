@@ -1,0 +1,23 @@
+
+<div id="airesponse" class="col-12">
+    <h2 class="text-danger text-uppercase"> Get Topics </h2>
+    <form 
+        method="POST" 
+        enctype="multipart/form-data"
+        hx-post="{% url 'createblog:get_outline' %}" 
+        hx-target="#airesponse"            
+        hx-indicator="#applyspinner">
+            {% csrf_token %}                    
+            {% for it in incomplete_topic %}  
+            <fieldset>    
+                <div class="form-check">                       
+                    <input class="form-check-input" type="radio" name="topic_id" value="{{it.id}}" id="{{it.id}}" {% if it.completed %} checked {% endif %}>
+                    <label class="form-check-label" for="{{it.id}}">
+                        {{it.title}}
+                    </label>     
+                </div>   
+            </fieldset> 
+            {% endfor %}
+            <input type="submit" id="topic_form"  class="btn btn-success btn-block" value = "submit"/>                      
+    </form>
+</div> 

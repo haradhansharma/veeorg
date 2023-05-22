@@ -66,11 +66,17 @@ def footer_menu(request):
             'data_set': False 
         }
         menu_items.append(item_dict)     
+    if request.user.is_authenticated and request.user.is_superuser:
+        menu_items.append(
+            {'title': 'Create Blog', 'url': reverse('createblog:createblog_home'),'data_set': False},        
+            ) 
+   
+    if not request.user.is_authenticated:   
         
-    menu_items.append(
-        {'title': 'Login', 'url': reverse('login'),'data_set': False},        
-        ) 
-    
+        menu_items.append(
+            {'title': 'Login', 'url': reverse('login'),'data_set': False},        
+            ) 
+        
         
     return menu_items
 

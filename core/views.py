@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+import requests
 from core.agent_helper import get_client_ip
 from .models import Page, Blog, Action, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -45,7 +46,8 @@ def home(request):
     except PageNotAnInteger:
         blogs = paginator.page(1)
     except EmptyPage:
-        blogs = paginator.page(paginator.num_pages)  
+        blogs = paginator.page(paginator.num_pages)          
+  
         
     site = site_data()
     site['name'] = 'Ultimate Resource for International Job Seekers'

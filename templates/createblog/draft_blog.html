@@ -1,0 +1,18 @@
+<div id="airesponse" class="col-12">
+    <h2 class="text-danger text-uppercase"> Draft Blog: {{topic.title}} </h2>
+    <form method="POST" id="allform" >
+            {% csrf_token %}   
+            {{ draft_formset.management_form }}
+            {% for form in draft_formset %}           
+                    <div id="form_{{forloop.counter0}}" class="mt-3">  
+                        <label class="alert alert-primary col-12" role="alert" for="{{ form.response.id_for_label }}">{{ form.response.label|linebreaks }}</label>
+                        <span class="text-start text-danger">{{ form.response.errors }}</span>
+                        <span>{{ form.response }}</span>  
+                        <span>{{ form.topic_id }}</span>      
+                        <span>{{ form.outline_id }}</span>  
+                    </div>
+            {% endfor %}   
+    </form>
+    <button hx-post="{% url 'createblog:edit_draft' %}" hx-target="#airesponse" hx-indicator="#applyspinner" hx-swap="innerHTML" hx-include ='#allform' hx-trigger="click"  class="btn btn-success btn-block mt-4">Commit Modification</button>                      
+ 
+</div> 

@@ -1,0 +1,22 @@
+<div id="airesponse" class="col-12">
+    <h2 class="text-danger text-uppercase"> Outline of Topic : {{topic_title}} </h2>
+    <form 
+        method="POST"       
+        hx-post="{% url 'createblog:confirm_outline' %}" 
+        hx-target="#airesponse"            
+        hx-indicator="#applyspinner">
+            {% csrf_token %}   
+            {{ formset.management_form }}
+            {% for form in formset %}
+            <div class="mt-3 alert alert-primary col-12">              
+                    {{ form.as_p }}            
+            </div>
+            {% endfor %}
+            <input type="submit" id="outline_form"  class="btn btn-success btn-block" value = "Modify"/>      
+            <input type="submit" id="outline_form" hx-post="{% url 'createblog:create_blog' %}" hx-target="#airesponse" hx-indicator="#applyspinner" hx-swap="innerHTML" hx-vals='{"topic_id": "{{topic_id}}"}' hx-trigger="click consume" class="btn btn-success btn-block" value = "Create Blog"/>      
+
+    </form>
+
+    <button hx-post="{% url 'createblog:get_outline' %}" hx-target="#airesponse" hx-indicator="#applyspinner" hx-swap="innerHTML" hx-vals='{"regenarate": "regenarate", "topic_id": "{{topic_id}}"}' hx-trigger="click consume"  class="btn btn-success btn-block mt-4">Re Genarate</button>                      
+
+</div> 

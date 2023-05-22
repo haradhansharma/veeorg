@@ -5,6 +5,7 @@ from .settings_email import *
 from .settings_logs import *
 # from .settings_security import *
 from .settings_summernote import *
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 CACHES = {
     'default': {

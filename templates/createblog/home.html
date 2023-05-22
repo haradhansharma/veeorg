@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %}
+{% block robotindex %} <meta name="robots" content="noindex">  {% endblock %}
+{% load core %}
+{% block header %}
+    {% include 'layouts/header.html' %}
+{% endblock %}
+{% block extra_head %}
+<style>
+    .apply-indicator, .likespinner{
+        display:none;
+      }
+      .htmx-request .apply-indicator, .htmx-request .likespinner{
+        display:inline;
+      }
+      .htmx-request.apply-indicator, .htmx-request.likespinner{
+        display:inline;
+      }
+      
+</style>
+{% endblock %}
+{% block content %}
+<div id="applyspinner" class="col-auto apply-indicator">                                                
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+
+
+<div id="airesponse" class="col-12">
+    <h2 class="text-danger text-uppercase"> Get Topics </h2>
+    <form 
+    method="POST" 
+    enctype="multipart/form-data"
+    hx-post="{% url 'createblog:get_topics' %}" 
+    hx-target="#airesponse"            
+    hx-indicator="#applyspinner"
+    >
+        {% csrf_token %}
+        {{niche_form.as_p}}
+        <input type="submit" id="topic_form"  class="btn btn-success btn-block" value = "submit"/>
+        
+    </form>
+</div> 
+
+<!--
+<div id="airesponse" class="col-12">
+    <h2 class="text-danger text-uppercase"> Genarate Outline based on Topic </h2>
+    <form 
+    method="POST" 
+    enctype="multipart/form-data"
+    hx-post="{% url 'createblog:createblog_home' %}" 
+    hx-target="#airesponse"            
+    hx-indicator="#applyspinner"
+    >
+        {% csrf_token %}
+        {{topic_form.as_p}}
+        <input type="submit" id="topic_form"  class="btn btn-success btn-block" value = "submit"/>
+        
+    </form>
+</div> 
+-->
+
+
+
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'layouts/footer.html' %}
+{% endblock %}
+

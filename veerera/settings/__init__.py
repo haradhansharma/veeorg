@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'core',
     'django.contrib.sitemaps',
-    'captcha',          
+    'captcha',   
+    'createblog',       
 ]
 
 if DEBUG:

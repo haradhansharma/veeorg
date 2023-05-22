@@ -58,10 +58,10 @@ class CategorySitemap(sitemaps.Sitemap):
     
 class BlogSitemap(sitemaps.Sitemap):
     changefreq = "daily"
-    priority = 0.5    
+    priority = 1.0    
 
     def items(self):
-        blogs = Blog.objects.filter(status = 'published', should_as_it_is=True)[:10]
+        blogs = Blog.objects.filter(status = 'published', should_as_it_is=True)[:20]
         return blogs
     
     def lastmod(self, obj):
