@@ -6,7 +6,7 @@ from .settings_logs import *
 # from .settings_security import *
 from .settings_summernote import *
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-SESSION_COOKIE_SAMESITE = 'Secure'
+# SESSION_COOKIE_SAMESITE = 'Secure'
 SESSION_COOKIE_SECURE = True
 
 

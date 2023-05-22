@@ -14,8 +14,9 @@ db.sqlite3
 cache/*
 !cache/.gitkeep
 
-logs/*
-!logs/.gitkeep
+logs
+logssss
+
 
 staticfiles
 
