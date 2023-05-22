@@ -2925,3 +2925,5 @@ WARNING 2023-05-22 10:47:52,616 django.request Thread-1 (process_request_thread)
 WARNING 2023-05-22 10:47:52,617 django.server Thread-1 (process_request_thread) 8884 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 6356 "GET /b/true HTTP/1.1" 404 3564
 WARNING 2023-05-22 10:47:57,085 django.request Thread-1 (process_request_thread) 8884 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 6356 Not Found: /b/True
 WARNING 2023-05-22 10:47:57,087 django.server Thread-1 (process_request_thread) 8884 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 6356 "GET /b/True HTTP/1.1" 404 3564
+WARNING 2023-05-22 11:17:10,355 django.request Thread-1 (process_request_thread) 15468 F:\django\veereraorg\env\lib\site-packages\django\utils\log.py 241 log_response 21060 Not Found: /b/True
+WARNING 2023-05-22 11:17:10,357 django.server Thread-1 (process_request_thread) 15468 F:\django\veereraorg\env\lib\site-packages\django\core\servers\basehttp.py 212 log_message 21060 "GET /b/True HTTP/1.1" 404 3564
