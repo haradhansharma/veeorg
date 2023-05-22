@@ -15,7 +15,7 @@ cache/*
 !cache/.gitkeep
 
 
-logssss
+logs
 
 
 staticfiles
