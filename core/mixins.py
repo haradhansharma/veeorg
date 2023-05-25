@@ -61,8 +61,8 @@ class SaveFromAdminMixin:
             if not self.sites.exists():
                 self.sites.add(request.site)                   
 
-            if hasattr(self.__class__, 'append_to_save'):           
-                self.append_to_save(request, *args, **kwargs)
+        if hasattr(self.__class__, 'append_to_save'):           
+            self.append_to_save(request, *args, **kwargs)
 
     def get_creator_field_name(self):
         # This method should return the name of the field that refers to the user model, e.g. 'creator'
