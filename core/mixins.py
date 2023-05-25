@@ -9,13 +9,10 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 
 class SaveFromAdminMixin:
-    def save(self, request=None, *args, **kwargs):
-        # print(self.title)
-        if getattr(self, '_saving_from_admin', False):
-            # as saving method calling from model or model admin so we can pass here
-            pass
-        
-        else:
+    def save(self, request=None, *args, **kwargs):      
+        if getattr(self, '_saving_from_admin', False):      
+            super().save(request, *args, **kwargs)        
+        else:   
             if not request:
                 raise ValueError("The 'request' object is required to save the model.")
 
