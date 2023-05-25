@@ -1,12 +1,16 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.sites.models import Site
+from django.core.exceptions import ValidationError
+from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
-
+from django.contrib import messages
 
 class SaveFromAdminMixin:
     def save(self, request=None, *args, **kwargs):
+        # print(self.title)
         if getattr(self, '_saving_from_admin', False):
             # as saving method calling from model or model admin so we can pass here
             pass
@@ -19,6 +23,7 @@ class SaveFromAdminMixin:
                 raise ValueError("The user must be logged in to save the model.")
 
             creator = self.get_creator_field_name()
+            
             if not creator:
                 raise ValueError("The 'get_creator_field_name' method must be implemented to save the model.")
 
@@ -27,10 +32,8 @@ class SaveFromAdminMixin:
             sites = self.get_sites_field_name()
             
             if not sites:
-                raise ValueError("The 'get_sites_field_name' method must be implemented to save the model.")
-                        
-            if not self.sites.exists():
-                self.sites.add(request.site)
+                raise ValueError("The 'get_sites_field_name' method must be implemented to save the model.")                       
+            
                 
             title = self.get_title_field_name()
             
@@ -40,8 +43,7 @@ class SaveFromAdminMixin:
             slug = self.get_slug_field_name()
             
             if not slug:
-                raise ValueError("The 'get_slug_field_name' method must be implemented to save the model.")
-                   
+                raise ValueError("The 'get_slug_field_name' method must be implemented to save the model.")                   
 
             if not self.slug:
                 # generate a slug based on the title
@@ -50,13 +52,20 @@ class SaveFromAdminMixin:
             # check if the generated slug already exists
             original_slug = self.slug
             counter = 1
-
+        
             while self.__class__.objects.filter(slug=self.slug).exclude(id=self.id).exists():
                 self.slug = f'{original_slug}-{counter}'
                 counter += 1
-                if counter > 10:  # Add a limit to avoid infinite loop
-                    raise ValueError("Unable to generate a unique slug for the model.")
+                if counter > 10:   
+                    messages.error(request, 'Unable to generate a unique slug for the model!')           
+                    raise ValidationError('Unable to generate a unique slug for the model!')  
+                    
             super().save(request, *args, **kwargs)
+            if not self.sites.exists():
+                self.sites.add(request.site)                   
+
+            if hasattr(self.__class__, 'append_to_save'):           
+                self.append_to_save(request, *args, **kwargs)
 
     def get_creator_field_name(self):
         # This method should return the name of the field that refers to the user model, e.g. 'creator'
@@ -103,7 +112,7 @@ class TitleAndSlugModelMixin(models.Model):
     It will add `title` and `slug` field to te model
     '''
     title = models.CharField(_("Page Title"), max_length=250)
-    slug = models.SlugField(verbose_name=_('Slug'), unique=True, db_index=True)
+    slug = models.SlugField(verbose_name=_('Slug'), unique=True, db_index=True, max_length=250)
     
     def get_title_field_name(self):
         return 'title'

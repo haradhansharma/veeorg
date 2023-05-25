@@ -211,8 +211,9 @@ class Blog(
     SitesModelMixin,
     CreatorModelMixin, 
     DateFieldModelMixin,
-    models.Model,
     SaveFromAdminMixin,
+    
+    models.Model,
     
     ):
     STATUS_CHOICES = (
@@ -372,19 +373,16 @@ class Blog(
         return blocks
         
         
-    def save(self, request=None, *args, **kwargs):          
-        if getattr(self, '_saving_from_admin', False):           
-            super().save(request, *args, **kwargs)
-        else:        
-            SaveFromAdminMixin.save(self, request=request, *args, **kwargs)     
-            
-        if not self.should_as_it_is:
+    def append_to_save(self, request=None, *args, **kwargs):  
+             
+        if not self.should_as_it_is:                                       
             len_of_para = len(get_para_list_from(self.body))           
-            latest_links = Blog.published.exclude(id=self.id)
-            latest_indicator_links = latest_links[:len_of_para % 2]
-            latest_table_links = latest_links[len_of_para % 2:len_of_para]
+            latest_links = Blog.published.exclude(id=self.id)       
+            latest_indicator_links = latest_links[-len_of_para % 2:]
+            latest_table_links = latest_links[-len_of_para % 2:len_of_para]
             self.build_indicator_link.add(*latest_indicator_links)
             self.build_table_link.add(*latest_table_links)
+       
   
 def validate_file_size(value):
     filesize= value.size

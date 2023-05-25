@@ -1,53 +1,40 @@
 from pprint import pprint
 import time
 from django.http import Http404, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 import openai
 import os
 from .models import *
 from django.forms import formset_factory
+from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from createblog.forms import (
     NicheSelectionForm,
     OutlineForm,
-    DraftForm
-    # TopicForm
+    DraftForm,
+    AddTopicForm
     ) 
 openai.api_key = os.getenv("OPENAI_API_KEY")   
 
+LABEL_FOR_NICHE = 'Please suggest 5 blog topics on niche'
+LABEL_FOR_KEYWORDS = 'by considering keywords'
+LABEL_FOR_NICHE_AREA = 'for'
 
 def createblog_home(request):
     if not request.user.is_superuser:
         raise Http404
     
-    template_name = 'createblog/home.html'    
-    
-    # if request.method == 'POST':
-        # topic_form = TopicForm(request.POST)        
-        # if topic_form.is_valid():
-        #     topic = topic_form.cleaned_data['topic']
-        # else:
-        #     return HttpResponse(topic_form.errors)
-            
-        # prompt = [{'role': 'user', 'content':f"Generate an outline for a blog post on the topic: {topic}", 'name': f"{request.user.username}"},]        
-        
-        
-        # response = openai.ChatCompletion.create(
-        #     model="gpt-3.5-turbo",
-        #     messages=prompt,   
-        #     temperature=1.2,         
-        #     )
-        
-        # # Extract the generated outline from the response
-        # generated_outline = response.choices[0].message.content        
-        
-        # # Pass the generated outline to the template for rendering
-        # return render(request, 'createblog/outline.html', {'outline': generated_outline})
-    
-    # topic_form = TopicForm()
+    template_name = 'createblog/home.html'   
+
     niche_form = NicheSelectionForm()
+    niche_form.fields['selected_niche'].label = LABEL_FOR_NICHE
+    niche_form.fields['keywords'].label = LABEL_FOR_KEYWORDS
+    niche_form.fields['niche_area'].label = LABEL_FOR_NICHE_AREA
+    
     
     context = {
-        # 'topic_form' : topic_form,
         'niche_form' : niche_form        
     }
     
@@ -57,28 +44,49 @@ def createblog_home(request):
 def get_topics(request):
     if not request.user.is_superuser:
         return HttpResponse('You are not super user')    
+    
+    topics = Topic.objects.all()
+    
     if request.method == 'POST':
-        niche_form = NicheSelectionForm(request.POST)        
+        add_topic_form = AddTopicForm()
+        
+        niche_form = NicheSelectionForm(request.POST)     
+           
         if niche_form.is_valid():
             niche_title = niche_form.cleaned_data['selected_niche']   
-            extra_text =  niche_form.cleaned_data['extra_text']           
+            keywords = niche_form.cleaned_data['keywords']               
+            niche_area =  niche_form.cleaned_data['niche_area']           
         else:
             return HttpResponse(niche_form.errors)
-        incomplete_topic = Topic.objects.filter(category_title = niche_title, completed = False)[:60]
-        if incomplete_topic.exists():
-            return render(request, 'createblog/topic_list.html', context={'incomplete_topic': incomplete_topic})
         
-        existing_topics = Topic.objects.filter(category_title = niche_title)[:60]
-        topic_titles = existing_topics.values_list('title', flat=True)
+        existing_topics = topics.filter(category_title = niche_title)
+        completed_topics, incomplete_topic = get_processed_topic(request, existing_topics)
+        
+        if incomplete_topic.exists():
+            return render(
+                request, 
+                'createblog/topic_list.html', 
+                context={
+                    'incomplete_topic': incomplete_topic, 
+                    'completed_topics': completed_topics, 
+                    'add_topic_form': add_topic_form,
+                    'niche_title' : niche_title,
+                    }
+                )
+        
+        # existing_topics = topics.filter(category_title = niche_title)[:60]
+        topic_titles = existing_topics[-60:].values_list('title', flat=True)
         joined_titles = "\n".join(topic_titles)
         
         max_token_limit = 4096  # Adjust this value based on the model's token limit
         if len(joined_titles) > max_token_limit:
             joined_titles = joined_titles[:max_token_limit]
-            
+        
+        prompt_body =  f"{LABEL_FOR_NICHE} : '{niche_title}' {LABEL_FOR_KEYWORDS} {keywords} {LABEL_FOR_NICHE_AREA} {niche_area}. Response topics only without any formal or extra text."  
         prompt = [
-            {'role': 'system', 'content': joined_titles},
-            {'role': 'user', 'content': f"Suggest some topics of blog post based on : '{niche_title}' {extra_text}" , 'name': request.user.username}
+            {'role': 'system', 'content': 'You are creating Blog Topics'},            
+            {'role': 'assistant', 'content': joined_titles },            
+            {'role': 'user', 'content': prompt_body  , 'name': request.user.username}
         ]        
         
         response = openai.ChatCompletion.create(
@@ -91,20 +99,111 @@ def get_topics(request):
         generated_outline = response.choices[0].message.content.split('\n')
         topic_objects = [Topic(category_title=niche_title, title=title) for title in generated_outline]
         Topic.objects.bulk_create(topic_objects)
-        incomplete_topic = Topic.objects.filter(category_title = niche_title, completed = False)[:60]
-        return render(request, 'createblog/topic_list.html', context={'incomplete_topic': incomplete_topic})
+        
+        topics = Topic.objects.filter(category_title = niche_title)
+        completed_topics, incomplete_topic = get_processed_topic(request, topics)
+        
+        return render(
+            request, 
+            'createblog/topic_list.html', 
+            context={
+                'incomplete_topic': incomplete_topic, 
+                'completed_topics': completed_topics, 
+                'add_topic_form': add_topic_form,
+                'niche_title' : niche_title,
+                }
+            )
+    
     return HttpResponse('Nothing to response')
+
+
+
+def delete_topic(request):  
+    if not request.user.is_superuser:
+        return HttpResponse('You are not super user')   
+    if request.method == 'POST':     
+        add_topic_form = AddTopicForm()
+        topic = Topic.objects.get(id = int(request.POST.get('topic_id')))
+        niche_title = topic.category_title       
+        topics = Topic.objects.filter(category_title = niche_title)
+        completed_topics, incomplete_topic = get_processed_topic(request, topics)
+        topic.delete()
+        return render(
+            request, 
+            'createblog/topic_list.html', 
+            context={
+                'incomplete_topic': incomplete_topic, 
+                'completed_topics': completed_topics, 
+                'add_topic_form': add_topic_form
+                }
+            )
+    return HttpResponse('Nothing to response')
+
+def add_topic(request):
+    if not request.user.is_superuser:
+        return HttpResponse('You are not super user')  
+    if request.method == 'POST':     
+        add_topic_form = AddTopicForm(request.POST)
+        
+        if add_topic_form.is_valid():
+            niche_title = add_topic_form.cleaned_data['selected_niche']   
+            topic_title = add_topic_form.cleaned_data['topic']     
+            Topic.objects.create(category_title = niche_title, title = topic_title)
+        else:
+            return HttpResponse(add_topic_form.errors)
+        
+        
+        add_topic_form = AddTopicForm()
+        topics = Topic.objects.filter(category_title = niche_title)
+        
+        completed_topics, incomplete_topic = get_processed_topic(request, topics)
+        
+        
+        return render(
+            request, 
+            'createblog/topic_list.html', 
+            context={
+                'incomplete_topic': incomplete_topic, 
+                'completed_topics': completed_topics, 
+                'add_topic_form': add_topic_form
+                }
+            )
+    return HttpResponse('Nothing to response')
+
+
+def get_processed_topic(request, topics):    
+    completed_topics = topics.filter(completed = True)        
+    incomplete_topic = topics.filter(completed = False)          
+    paginator = Paginator(completed_topics, 100) 
+    page_number = request.GET.get('page')
+    try:
+        completed_topics = paginator.page(page_number)
+    except PageNotAnInteger:
+        completed_topics = paginator.page(1)
+    except EmptyPage:
+        completed_topics = paginator.page(paginator.num_pages)    
+        
+    return completed_topics, incomplete_topic
+    
+        
+
+    
+    
 
 def get_outline(request):
     if not request.user.is_superuser:
         return HttpResponse('You are not super user')  
     OutlineFormSet = formset_factory(OutlineForm, extra=0)
     if request.method == 'POST':     
-        topic_id = request.POST.get('topic_id')    
+        topic_id = request.POST.get('topic_id')   
+        if not  topic_id:
+            messages.error(request, 'Topic not selected.')
+            return redirect(reverse('createblog:get_topics'))
+            
         topic = Topic.objects.get(id = int(topic_id))        
         topic_title = topic.title         
         
-        if 'regenarate' in request.POST:          
+        if 'regenarate' in request.POST: 
             DraftBlog.objects.filter(topic = topic).delete()     
             Outline.objects.filter(topic = topic).delete()
                  
@@ -149,10 +248,9 @@ def confirm_outline(request):
         else:
             HttpResponse(formset.errors)
     existing_outline = Outline.objects.filter(id__in = id_list)   
-    topic = existing_outline.first()
-    topic_id = topic.topic_id
-    topic_title = topic.topic_title
-    
+    topic = existing_outline.first().topic
+    topic_id = topic.id
+    topic_title = topic.title   
     
     formset = OutlineFormSet(initial=[{'outline': o.outline, 'id': o.id} for o in existing_outline])
     return render(request, 'createblog/outline.html', {'formset': formset, 'topic_id': topic_id, 'topic_title': topic_title})
@@ -246,8 +344,7 @@ def create_blog(request):
                     draft_objects.append(DraftBlog(topic = topic, outline_id = section['outline_id'], response = assistant_message))
                             
                     time.sleep(5)
-                    # Clear the user and assistant messages for the next iteration
-                    # messages = messages[:1]
+                 
             except Exception as e:
                 return HttpResponse(f'Somethings error \n {e}')
             
@@ -274,6 +371,8 @@ def get_draft_formset(existing_draft, topic):
     return draft_formset
 
 def edit_draft(request):
+    if not request.user.is_superuser:
+        return HttpResponse('You are not a superuser')   
     DraftFormSet = formset_factory(DraftForm, extra=0)
     if request.method == 'POST':      
         draft_formset = DraftFormSet(request.POST)
@@ -290,9 +389,71 @@ def edit_draft(request):
         topic = Topic.objects.get(id = int(topicid[0]))
         existing_draft = DraftBlog.objects.filter(topic = topic)   
         draft_formset = get_draft_formset(existing_draft, topic)               
-        return render(request, 'createblog/draft_blog.html', context = {'draft_formset' : draft_formset, 'topic': topic})        
+        return render(request, 'createblog/draft_blog.html', context = {'draft_formset' : draft_formset, 'topic': topic})       
     
     return HttpResponse('Nothing to response')
+
+def draft_to_blog(request):
+    from django.contrib.sites.shortcuts import get_current_site
+    from core.models import Blog, Category
+    
+    if not request.user.is_superuser:
+        return HttpResponse('You are not a superuser')  
+    
+    DraftFormSet = formset_factory(DraftForm, extra=0)
+    if request.method == 'POST':      
+        draft_formset = DraftFormSet(request.POST) 
+        
+    topic_id = set()
+    section_list = []  
+    if draft_formset.is_valid():             
+        for form in draft_formset:   
+            topicid = form.cleaned_data['topic_id']
+            topic_id.add(topicid)
+            response = form.cleaned_data['response']       
+            section_list.append(response)   
+    topic = Topic.objects.get(id = list(topic_id)[0])
+    categories = Category.objects.filter(title = topic.category_title)
+    body = ''.join(section_list) 
+    blog = Blog(       
+        title = topic.title,    
+        creator = request.user,       
+        ref_link = get_current_site(request).domain,
+        body = body,
+        status = 'draft',
+        should_have_hta = False,
+        should_have_apf = False,
+        should_as_it_is = True
+    )
+    try:
+        blog.save(request=request)  
+    except:     
+        messages.warning(request, 'Try to regenarate or contact with developper!')   
+        return redirect(reverse('createblog:get_draft_blog', args=[int(topic.id)]))  
+       
+    blog.categories.add(*categories)    
+    
+    topic.completed=True
+    topic.save()
+    
+    DraftBlog.objects.filter(topic = topic).delete()
+    
+    admin_url_path = f'/admin/{blog._meta.app_label}/{blog._meta.model_name}/{blog.id}/change/'    
+    return render(request, 'createblog/draft_to_blog.html', context={'admin_url_path':admin_url_path})
+
+def get_draft_blog(request, topic_id):
+    
+    if not request.user.is_superuser:
+        return HttpResponse('You are not a superuser!')  
+    
+    topic = Topic.objects.get(id = topic_id)
+    existing_draft = DraftBlog.objects.filter(topic = topic)   
+    draft_formset = get_draft_formset(existing_draft, topic)  
+    
+    return render(request, 'createblog/draft_blog.html', context = {'draft_formset' : draft_formset, 'topic': topic})     
+    
+   
+
     
     
             

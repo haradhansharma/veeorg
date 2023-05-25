@@ -1,23 +1,44 @@
 
 <div id="airesponse" class="col-12">
-    <h2 class="text-danger text-uppercase"> Get Topics </h2>
-    <form 
-        method="POST" 
-        enctype="multipart/form-data"
-        hx-post="{% url 'createblog:get_outline' %}" 
-        hx-target="#airesponse"            
-        hx-indicator="#applyspinner">
+    <div class="col-12 card mt-4 p-3 text-light">
+        <h2 class="text-danger text-uppercase"> Topics for Niche: {{niche_title}} </h2>
+        <form method="POST">
+                {% csrf_token %}                    
+                {% for it in incomplete_topic %}  
+                <fieldset>    
+                    <div class="form-check">                       
+                        <input class="form-check-input" type="radio" name="topic_id" value="{{it.id}}" id="{{it.id}}" required {% if it.completed %} checked {% endif %}>
+                        <label class="form-check-label text-primary" for="{{it.id}}">
+                            {{it.title}}
+                        </label>     
+                    </div>   
+                </fieldset> 
+                {% endfor %}
+                <div class="btn-group mt-4">
+                    <input type="submit" hx-post="{% url 'createblog:get_outline' %}" hx-target="#airesponse" hx-trigger='click consume'  hx-indicator="#applyspinner"  id="topic_form"  class="btn btn-success btn-block" value = "Genarate Outline"/>   
+                    <input type="submit" hx-post="{% url 'createblog:delete_topic'%}" hx-target="#airesponse" hx-trigger='click consume'  hx-indicator="#applyspinner"  id="topic_form"  class="btn btn-danger btn-block" value = "Delete Selected"/>                    
+                </div>
+        </form>
+    </div>
+    <div class="col-12 card mt-4 p-3 text-light">
+        <h2 class="text-danger text-uppercase"> Add Manual Topic </h2>
+        <form method="POST" >
             {% csrf_token %}                    
-            {% for it in incomplete_topic %}  
-            <fieldset>    
-                <div class="form-check">                       
-                    <input class="form-check-input" type="radio" name="topic_id" value="{{it.id}}" id="{{it.id}}" {% if it.completed %} checked {% endif %}>
-                    <label class="form-check-label" for="{{it.id}}">
-                        {{it.title}}
-                    </label>     
-                </div>   
-            </fieldset> 
+            {{ add_topic_form.as_p }}
+            <input type="submit" hx-post="{% url 'createblog:add_topic' %}" hx-target="#airesponse" hx-trigger='click'  hx-indicator="#applyspinner"  id="topic_form"  class="btn btn-success btn-block" value = "Add Manual Topic"/>           
+        </form>
+    </div>
+    {% if completed_topics %}
+    <div class="col-12 card mt-4 p-3 text-light">
+        <h2 class="text-danger text-uppercase"> Topics that already Genarated Blog</h2>
+        <ul>
+            {% for ct in completed_topics %}
+                <li class="text-secondary">{{ct.title}}</li>              
             {% endfor %}
-            <input type="submit" id="topic_form"  class="btn btn-success btn-block" value = "submit"/>                      
-    </form>
+        </ul>
+    </div>
+    {% include 'includes/pagination.html' with page=completed_topics %}
+    {% endif %}
+
+
 </div> 

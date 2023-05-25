@@ -1,4 +1,16 @@
 <div id="airesponse" class="col-12">
+    <div class="row">
+        <div class="cotainer">
+          <!--Messages-->
+        {% if messages %}
+          <div class="alert alert-secondary mt-5 text-center" role="alert">
+              {% for message in messages %}
+              <span class="alert-inner--text ">{{ message }}</span>
+              {% endfor %}
+          </div>
+        {% endif %}
+        </div>
+      </div>
     <h2 class="text-danger text-uppercase"> Draft Blog: {{topic.title}} </h2>
     <form method="POST" id="allform" >
             {% csrf_token %}   
@@ -13,6 +25,8 @@
                     </div>
             {% endfor %}   
     </form>
-    <button hx-post="{% url 'createblog:edit_draft' %}" hx-target="#airesponse" hx-indicator="#applyspinner" hx-swap="innerHTML" hx-include ='#allform' hx-trigger="click"  class="btn btn-success btn-block mt-4">Commit Modification</button>                      
- 
+    <div class="btn-group">
+        <button hx-post="{% url 'createblog:edit_draft' %}" hx-target="#airesponse" hx-indicator="#applyspinner" hx-swap="innerHTML" hx-include ='#allform' hx-trigger="click consume"  class="btn btn-primary btn-block mt-4">Save Modification</button>                      
+        <button hx-post="{% url 'createblog:draft_to_blog' %}" hx-target="#airesponse" hx-indicator="#applyspinner" hx-swap="innerHTML" hx-include ='#allform' hx-trigger="click consume"  class="btn btn-success btn-block mt-4">Publish To Blog</button>                      
+    </div>
 </div> 

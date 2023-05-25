@@ -16,6 +16,14 @@ urlpatterns = [
     path('confirm-outline/', confirm_outline, name='confirm_outline'),
     path('create-blog/', create_blog, name='create_blog'),
     path('edit-draft/', edit_draft, name='edit_draft'),
+    path('delete-topic/', delete_topic, name='delete_topic'),
+    path('add-topic/', add_topic, name='add_topic'),
+    path('draft-to-blog/', draft_to_blog, name='draft_to_blog'),
+    path('get-draft-blog/<int:topic_id>', get_draft_blog, name='get_draft_blog'),
+    
+    
+    
+    
     
     
     
