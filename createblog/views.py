@@ -75,12 +75,13 @@ def get_topics(request):
                 )
         
         # existing_topics = topics.filter(category_title = niche_title)[:60]
-        topic_titles = existing_topics[-60:].values_list('title', flat=True)
+        topic_titles = existing_topics.values_list('title', flat=True)
+ 
         joined_titles = "\n".join(topic_titles)
         
         max_token_limit = 4096  # Adjust this value based on the model's token limit
         if len(joined_titles) > max_token_limit:
-            joined_titles = joined_titles[:max_token_limit]
+            joined_titles = joined_titles[-max_token_limit:]
         
         prompt_body =  f"{LABEL_FOR_NICHE} : '{niche_title}' {LABEL_FOR_KEYWORDS} {keywords} {LABEL_FOR_NICHE_AREA} {niche_area}. Response topics only without any formal or extra text."  
         prompt = [
@@ -174,14 +175,14 @@ def add_topic(request):
 def get_processed_topic(request, topics):    
     completed_topics = topics.filter(completed = True)        
     incomplete_topic = topics.filter(completed = False)          
-    paginator = Paginator(completed_topics, 100) 
-    page_number = request.GET.get('page')
-    try:
-        completed_topics = paginator.page(page_number)
-    except PageNotAnInteger:
-        completed_topics = paginator.page(1)
-    except EmptyPage:
-        completed_topics = paginator.page(paginator.num_pages)    
+    # paginator = Paginator(completed_topics, 100) 
+    # page_number = request.GET.get('page')
+    # try:
+    #     completed_topics = paginator.page(page_number)
+    # except PageNotAnInteger:
+    #     completed_topics = paginator.page(1)
+    # except EmptyPage:
+    #     completed_topics = paginator.page(paginator.num_pages)    
         
     return completed_topics, incomplete_topic
     
