@@ -17,7 +17,7 @@ class CustomSummernoteTextFormField(fields.CharField):
     def to_python(self, value):
         value = super().to_python(value)
         return bleach.clean(
-            value, tags=ALLOWED_TAGS, attributes=ATTRIBUTES, css_sanitizer=STYLES)
+            value, tags=ALLOWED_TAGS, attributes=ATTRIBUTES, css_sanitizer=None)
         
     
 class AddTopicForm(forms.Form):
