@@ -262,7 +262,7 @@ def generate_response_for_outline(messages):
     response = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',
         messages=messages,
-        temperature=0.8,
+        temperature=0.9,
        
     )
     return response['choices'][0]['message']
@@ -327,7 +327,7 @@ def create_blog(request):
                     prompt += "Please provide subtitle for the content if needed.\n\n"
                     if section.get('keywords').strip():
                         prompt += f"Additionaly you may consider keywords: {section.get('keywords').strip()}.\n\n"                    
-                    prompt += "Please write your content for this section of outline of the blog below:"
+                    prompt += "Please write your content below for this section of outline of the blog:"
 
                     # User message for the current topic
                     messages.append({'role': 'user', 'content': prompt})
