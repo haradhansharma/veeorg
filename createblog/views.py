@@ -262,8 +262,7 @@ def generate_response_for_outline(messages):
     response = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',
         messages=messages,
-        temperature=0.9,
-       
+        temperature=0.9,       
     )
     return response['choices'][0]['message']
 
@@ -323,7 +322,7 @@ def create_blog(request):
                     prompt += "- Ensure that the content is free of plagiarism by using your own words and properly attributing any sources used.\n\n"
                     prompt += f"Blog Topic: {topic_title}\n\n"
                     prompt += f"Section Outline: {section['outline']}\n\n"  
-                    prompt += f"Please keep in mind that you are writing section {count} out of {len(sections)}. \n\n"  
+                    prompt += f"Please keep in mind that you are writing section {count} out of {len(sections)}, so please keep consistency with previous sections. \n\n"  
                     prompt += "Please provide subtitle for the content if needed.\n\n"
                     if section.get('keywords').strip():
                         prompt += f"Additionaly you may consider keywords: {section.get('keywords').strip()}.\n\n"                    
