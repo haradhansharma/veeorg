@@ -70,6 +70,12 @@ class Category(
         
     def get_absolute_url(self):
         return reverse('core:category_detail', args=[str(self.slug)])
+    
+    @property
+    def have_items(self):
+        if self.blogs_category.filter(status = 'published').exists() or self.pages_category.filter(status = 'published').exists():
+            return True
+        return False
         
     
     

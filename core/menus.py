@@ -22,17 +22,18 @@ from django.contrib import admin
 
 
 def category_menus(request):
-    all_cat = categories().filter(add_to_cat_menu = True, sites__id = request.site.id)
+    all_cat = categories().filter(add_to_cat_menu = True, sites__id = request.site.id) 
     menu_items = []
     for cat in all_cat:
-        item_dict = {
-            'title' : cat.title,
-            'url' : cat.get_absolute_url(),
-            'data_set': False,
-            'icon' : cat.icon
-            
-        }
-        menu_items.append(item_dict)
+        if cat.have_items:         
+            item_dict = {
+                'title' : cat.title,
+                'url' : cat.get_absolute_url(),
+                'data_set': False,
+                'icon' : cat.icon
+                
+            }
+            menu_items.append(item_dict)
         
     return menu_items
 
@@ -95,13 +96,16 @@ def header_menu(request):
         {'title': 'Page', 'url': False, 'data_set': page_menus(request) },        
         ) 
     for obj in objects_with_header_menu:
+        if getattr(obj, 'have_items'):
+            if obj.have_items:             
+                item_dict = {
+                    'title' : obj.title,
+                    'url' : obj.get_absolute_url(), 
+                    'data_set': False  
+                }
+                menu_items.append(item_dict)            
        
-        item_dict = {
-            'title' : obj.title,
-            'url' : obj.get_absolute_url(), 
-            'data_set': False  
-        }
-        menu_items.append(item_dict)      
+
         
     
         
