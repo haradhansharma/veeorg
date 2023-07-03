@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 
 
-import pyexiv2
+# import pyexiv2
 from PIL import Image
 from PIL.ExifTags import TAGS
 from PIL import ExifTags
@@ -72,21 +72,21 @@ class SaveFromAdminMixin:
             if not self.sites.exists():
                 self.sites.add(request.site)      
                 
-        if hasattr(self.__class__, 'feature'):     
-            if self.feature.path:   
-                img = pyexiv2.Image(self.feature.path)
-                xmp_metadata = img.read_xmp()
-                rating = xmp_metadata.get('Xmp.xmp.Rating')
-                subject = xmp_metadata.get('Xmp.dc.subject')
+        # if hasattr(self.__class__, 'feature'):     
+        #     if self.feature.path:   
+        #         img = pyexiv2.Image(self.feature.path)
+        #         xmp_metadata = img.read_xmp()
+        #         rating = xmp_metadata.get('Xmp.xmp.Rating')
+        #         subject = xmp_metadata.get('Xmp.dc.subject')
 
-                # Update the values if needed
-                xmp_metadata['Xmp.xmp.Rating'] = 5
-                xmp_metadata['Xmp.dc.subject'] = 'New subjects'
+        #         # Update the values if needed
+        #         xmp_metadata['Xmp.xmp.Rating'] = 5
+        #         xmp_metadata['Xmp.dc.subject'] = 'New subjects'
 
-                # Save the changes
-                img.modify_xmp(xmp_metadata)
-                img.write_metadata()
-                img.close()
+        #         # Save the changes
+        #         img.modify_xmp(xmp_metadata)
+        #         img.write_metadata()
+        #         img.close()
 
         if hasattr(self.__class__, 'append_to_save'):           
             self.append_to_save(request, *args, **kwargs)
