@@ -49,8 +49,8 @@ class Category(
     IsActiveModelMixin,
     MenuModelMixin,
     DateFieldModelMixin,
+    SaveFromAdminMixin,    
     models.Model,
-    SaveFromAdminMixin,
     
     ):
  
@@ -97,8 +97,8 @@ class Page(
     SitesModelMixin,  
     CreatorModelMixin, 
     DateFieldModelMixin,
+    SaveFromAdminMixin,    
     models.Model,   
-    SaveFromAdminMixin,
     
     ):  
     

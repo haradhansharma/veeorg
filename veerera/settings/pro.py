@@ -21,7 +21,7 @@ CACHES = {
     }
 }
 CACHE_MIDDLEWARE_ALIAS = 'default'
-USER_AGENTS_CACHE = 'default'
+# USER_AGENTS_CACHE = 'default'
 
 
 RECAPTCHA_PUBLIC_KEY = str(os.getenv("RECAPTCHA_PUBLIC_KEY"))

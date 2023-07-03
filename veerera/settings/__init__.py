@@ -3,7 +3,7 @@ from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 import ast
 from dotenv import load_dotenv
-# load_dotenv()
+
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'core',
     'django.contrib.sitemaps',
     'captcha',   
-    'createblog',       
+    'createblog',   
+    'associate',    
 ]
 
 if DEBUG:
@@ -63,9 +64,9 @@ else:
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.contrib.sites.middleware.CurrentSiteMiddleware',
-        'django.middleware.cache.UpdateCacheMiddleware',  #new    
+        # 'django.middleware.cache.UpdateCacheMiddleware',  #new    
         'django.middleware.common.CommonMiddleware',
-        'django.middleware.cache.FetchFromCacheMiddleware', #new    
+        # 'django.middleware.cache.FetchFromCacheMiddleware', #new    
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',

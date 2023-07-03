@@ -29,7 +29,9 @@ urlpatterns = [
     path('accounts/reset/done/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),    
     path('accounts/reset/<uidb64>/<token>/', CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),  
     path('', include('core.urls')),
-    path('', include('createblog.urls')),    
+    path('', include('createblog.urls')),   
+    path('', include('associate.urls')),    
+     
     path('summernote/', include('django_summernote.urls')),    
 ]
 

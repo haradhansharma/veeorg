@@ -24,8 +24,7 @@ urlpatterns = [
     path('category/<str:slug>', category_detail, name='category_detail'),    
     path('p/<str:slug>', page_detail, name='page_detail'),   
     path('job/success/', success, name='success'),
-    # path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain"), name='robot'), 
-    
-    
+  
+
     
 ]

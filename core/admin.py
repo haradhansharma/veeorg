@@ -22,12 +22,7 @@ class PageAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
         # set the flag indicating saving from admin
         obj._saving_from_admin = True        
         super().save_model(request, obj, form, change)
-        obj._saving_from_admin = False        
-        
-        
-
-       
-
+        obj._saving_from_admin = False    
 admin.site.register(Page, PageAdmin)
 
 

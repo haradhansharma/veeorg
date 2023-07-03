@@ -17,8 +17,7 @@ def get_country_list(value):
 
 @register.filter
 def add_action(url, action):
-    return f'{url}?action={action}'
-    
+    return f'{url}?action={action}'    
     
     
 @register.filter

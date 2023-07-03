@@ -340,6 +340,10 @@ def success(request):
             errors = '\n'.join([f"{field}: {error}" for field, error in form.errors.items()])
             return HttpResponse(f'Form errors:\n{errors}')            
         return HttpResponse('Application Submitted successfully')
+    
+    
+
+    
 
 
 

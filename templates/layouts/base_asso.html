@@ -9,10 +9,9 @@
     {% block robotindex %} 
     <meta name="robots" content="index,follow">  
     <meta name="monetag" content="d4f04a61e8aa1b216366513593899228">
-    
     {% endblock %}
 
-    {% block adsencecode %} {% endblock %}
+    {% block adsencecode %}  {% endblock %}
 
 
     <link rel="shortcut icon" type="image/x-icon" href="{{site_data.favicon}}"> 
@@ -98,36 +97,12 @@
 
         <div class="container min-vh-100 p-0">
             <div class="row">
-
-                <div class="col-md-8">
+                <div class="col-md-12">
                     {% block content %}
                     <!-- Add page content here -->
                     {% endblock %}
-                </div>
-
-                <div class="col-md-4">
-                  <div class="mb-3">
-                    </div>
-                    <div class="mb-3">
-                      <div class="mb-3">
-                      <a rel="nofollow" class="badge rounded-pill bg-primary text-decoration-none link-light" target="_blank" href="https://www.amazon.com/Coming-2-America-Eddie-Murphy/dp/B08QZN6LCM?_encoding=UTF8&linkCode=ib1&tag=haradhansharm-20&linkId=38088003347da618a828e09afd91e993&ref_=ihub_curatedcontent_20d579eb-eea6-4789-8782-8c4e386bae08">Coming 2 America?</a>
-                      <a rel="nofollow" class="badge rounded-pill bg-secondary text-decoration-none link-white" target="_blank" href="https://www.amazon.com/tryAB?ref_=assoc_tag_ph_1524210604088&_encoding=UTF8&camp=1789&creative=9325&linkCode=pf4&tag=haradhansharm-20&linkId=524fb2ec8309710b0bbdf0b87abee232"> Create Amazon Business Account</a>
-                      
-                      <a rel="nofollow" class="badge rounded-pill bg-success text-decoration-none link-white" target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=haradhansharm-20&linkCode=ur2&linkId=ec47d7b4e74efb334697882130c76321&camp=1789&creative=9325&node=3">Books Related To Business And Money</a>
-                      <a rel="nofollow" class="badge rounded-pill bg-danger text-decoration-none link-white" target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=haradhansharm-20&linkCode=ur2&linkId=ec47d7b4e74efb334697882130c76321&camp=1789&creative=9325&node=3">More Books Related To Business And Money</a>
-                      <a rel="nofollow" class="badge rounded-pill bg-dark text-decoration-none link-white" target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=haradhansharm-20&linkCode=ur2&linkId=06beaae6df2ed177fa1c903e279dd4d1&camp=1789&creative=9325&node=4736">Books Related To Self-Help</a>
-                      </div>
-                      <div>
-                        <a class="btn btn-warning" href="{% url 'associate:picked_essentials' %}">Picked Essential From Amazon</a>
-                      </div>
-                      <div>
-                      </div>
-
-                      <a rel="nofollow" target="_blank" href='https://lddy.no/1gd2u'><img class="img-fluid card mt-3" alt="#1 Amazon Product Research Tool" title="#1 Amazon Product Research Tool" src='https://leaddyno-client-images.s3.amazonaws.com/d4f367a22317180f6d28bf176fae0cbcc0899b19/e50d42b480218b94aaf2e2a33511500f035169f6_Zonbase%20Retargeting%20Ads%20-%20300x250%20copy%202.jpg'/></a>
-                
-                    </div>
+                </div>            
             </div>
-        </div>
     
 
 
@@ -145,15 +120,7 @@
     {% include 'includes/scripts.html' %}
 
     {% block extra_body %}
-        <script type="text/javascript">
-          amzn_assoc_ad_type = "link_enhancement_widget";
-          amzn_assoc_tracking_id = "haradhansharm-20";
-          amzn_assoc_linkid = "b93a6553f02fe5daf237b15fd8245df3";
-          amzn_assoc_placement = "";
-          amzn_assoc_marketplace = "amazon";
-          amzn_assoc_region = "US";
-        </script>
-        <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
+    <!-- Add any additional JavaScript files here -->
     {% endblock %}
   </body>
 </html>
