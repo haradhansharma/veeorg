@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from . import BASE_DIR
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv(os.path.join(BASE_DIR, '.env.veerera'))
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT= os.getenv('EMAIL_PORT')

@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv(os.path.join(BASE_DIR, '.env.veerera'))
 
 DEBUG = ast.literal_eval(os.getenv('DEBUG', 'False'))
 SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())

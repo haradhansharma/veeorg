@@ -4,7 +4,7 @@
 import os
 from dotenv import load_dotenv
 from . import BASE_DIR
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv(os.path.join(BASE_DIR, '.env.veerera'))
 
 FORMATTERS = (
     {

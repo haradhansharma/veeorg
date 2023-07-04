@@ -2,7 +2,7 @@
 import os
 from dotenv import load_dotenv
 from . import BASE_DIR
-load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv(os.path.join(BASE_DIR, '.env.veerera'))
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 from .settings_email import *
@@ -20,8 +20,6 @@ CACHES = {
         }
     }
 }
-# CACHE_MIDDLEWARE_ALIAS = 'default'
-# USER_AGENTS_CACHE = 'default'
 
 
 RECAPTCHA_PUBLIC_KEY = str(os.getenv("RECAPTCHA_PUBLIC_KEY"))
