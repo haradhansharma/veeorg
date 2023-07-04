@@ -9,5 +9,5 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-IP_LOCATION_API = os.getenv('IP_LOCATION_API')
+IP_LOCATION_API = str(os.getenv('IP_LOCATION_API'))
 

@@ -5,7 +5,7 @@ from .models import Page, Blog, Category, ResponseBackup
 from django.core.cache import cache
 import openai
 import os
-from .models import (
+from core.models import (
     Category,
     Page,
     Blog
