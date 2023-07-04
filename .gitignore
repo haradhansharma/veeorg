@@ -20,4 +20,5 @@ logs
 
 staticfiles
 .env.veerera
+.env.veereras
 
