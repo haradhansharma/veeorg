@@ -20,7 +20,7 @@ CACHES = {
         }
     }
 }
-CACHE_MIDDLEWARE_ALIAS = 'default'
+# CACHE_MIDDLEWARE_ALIAS = 'default'
 # USER_AGENTS_CACHE = 'default'
 
 
