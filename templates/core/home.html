@@ -21,8 +21,7 @@
                 {{blog.title|upper}} {% if not blog.should_as_it_is %}{{blog.job_area|get_country_list}}{% endif %}
             </a>
         </h5>
-          <p class="card-text">{{blog.body|safe|striptags|truncatechars:250}}</p>
-          
+          <p class="card-text">{{blog.body|safe|striptags|truncatechars:250}}</p>          
         </div>
       </div>
     </div>
@@ -30,12 +29,7 @@
 
 {% endfor %}
 {% include 'includes/pagination.html' with page=blogs %}
-<a rel="nofollow" href='https://lddy.no/1gd2u' target="_blank">
-  <img class="img-fluid card mt-3" 
-  alt="Your all in one platform for selling on amazon" 
-  title="Your all in one platform for selling on amazon" 
-  src='https://leaddyno-client-images.s3.amazonaws.com/d4f367a22317180f6d28bf176fae0cbcc0899b19/c9303d63e7c6cdad062b75888d7573d4980ec61c_Zonbase%20Retargeting%20Ads%20-%201200x628%20-%202.jpg'/>
-</a>
+
 
 
 {% endblock %}
