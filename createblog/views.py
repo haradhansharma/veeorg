@@ -9,7 +9,7 @@ from .models import *
 from django.forms import formset_factory
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.contrib.auth.decorators import login_required
 from createblog.forms import (
     NicheSelectionForm,
     OutlineForm,
@@ -22,6 +22,7 @@ LABEL_FOR_NICHE = 'Please suggest 5 blog topics on niche'
 LABEL_FOR_KEYWORDS = 'by considering keywords'
 LABEL_FOR_NICHE_AREA = 'for'
 
+@login_required
 def createblog_home(request):
     if not request.user.is_superuser:
         raise Http404
@@ -40,7 +41,7 @@ def createblog_home(request):
     
     return render(request, template_name, context=context)
 
-
+@login_required
 def get_topics(request):
     if not request.user.is_superuser:
         return HttpResponse('You are not super user')    
@@ -118,7 +119,7 @@ def get_topics(request):
     return HttpResponse('Nothing to response')
 
 
-
+@login_required
 def delete_topic(request):  
     if not request.user.is_superuser:
         return HttpResponse('You are not super user')   
@@ -139,7 +140,7 @@ def delete_topic(request):
                 }
             )
     return HttpResponse('Nothing to response')
-
+@login_required
 def add_topic(request):
     if not request.user.is_superuser:
         return HttpResponse('You are not super user')  
@@ -171,7 +172,7 @@ def add_topic(request):
             )
     return HttpResponse('Nothing to response')
 
-
+@login_required
 def get_processed_topic(request, topics):    
     completed_topics = topics.filter(completed = True)        
     incomplete_topic = topics.filter(completed = False)          
