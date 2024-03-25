@@ -4,10 +4,13 @@ from django.core.management.utils import get_random_secret_key
 import ast
 from dotenv import load_dotenv
 
-
+import environ
+import os
+env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-load_dotenv(os.path.join(BASE_DIR, '.env.veerera'))
+# load_dotenv(os.path.join(BASE_DIR, '.env.veerera'))
+environ.Env.read_env(os.path.join(BASE_DIR, '.env.veerera'))
 
 DEBUG = ast.literal_eval(os.getenv('DEBUG', 'False'))
 SECRET_KEY = str(os.getenv("SECRET_KEY"))
