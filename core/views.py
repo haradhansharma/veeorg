@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 import requests
@@ -22,6 +22,10 @@ from .agent_helper import (
     get_para_list_from,
     get_hwt_block
 )
+
+from django.views.decorators.cache import cache_page
+from django.template.loader import get_template
+from django.template import TemplateDoesNotExist, loader
 
 # from django.db.models import Sum, Count, Q
 from django.contrib.contenttypes.models import ContentType
@@ -342,6 +346,93 @@ def success(request):
         return HttpResponse('Application Submitted successfully')
     
     
+
+
+@cache_page(600) 
+def human_sun_home(request, webp=None):
+    context = {}  
+    
+    templates = {
+        'index': 'human_sun_folio/index.html',
+        'index.html': 'human_sun_folio/index.html',
+        'home': 'human_sun_folio/index.html',
+        
+        'blogs': 'human_sun_folio/blogs.html',
+        'blogs.html': 'human_sun_folio/blogs.html',
+        
+        'blog_details': 'human_sun_folio/blog_details.html',
+        'blog_details.html': 'human_sun_folio/blog_details.html',
+        
+        'projects': 'human_sun_folio/projects.html',
+        'projects.html': 'human_sun_folio/projects.html',
+        
+        'project_details': 'human_sun_folio/project_details.html',
+        'project_details.html': 'human_sun_folio/project_details.html',
+        
+        'services': 'human_sun_folio/services.html',
+        'services.html': 'human_sun_folio/services.html',
+        
+        'service_details': 'human_sun_folio/service_details.html',
+        'service_details.html': 'human_sun_folio/service_details.html',
+        
+        'contact': 'human_sun_folio/contact.html',
+        'contact.html': 'human_sun_folio/contact.html',
+        
+        'about': 'human_sun_folio/about.html',
+        'about.html': 'human_sun_folio/about.html',
+        
+        '403': 'human_sun_folio/403.html',
+        '403.html': 'human_sun_folio/403.html',
+        
+        '404': 'human_sun_folio/404.html',
+        '404.html': 'human_sun_folio/404.html',
+        
+        '500': 'human_sun_folio/500.html',
+        '500.html': 'human_sun_folio/500.html',        
+        
+        'sitemap': 'human_sun_folio/sitemap.xml',
+        'sitemap.xml': 'human_sun_folio/sitemap.xml',         
+
+        'ads': 'human_sun_folio/ads.txt',
+        'ads.txt': 'human_sun_folio/ads.txt',
+        
+        'robots': 'human_sun_folio/robots.txt',
+        'robots.txt': 'human_sun_folio/robots.txt',
+        
+        'manifest': 'human_sun_folio/manifest.json',
+        'manifest.json': 'human_sun_folio/manifest.json'
+        
+    }
+    if webp is None:
+        return render(request, 'human_sun_folio/index.html', context)
+    else:  
+        if webp in templates:
+            template_path = templates[webp]
+            
+            ext = template_path.split('.')[1]
+            
+            try:
+                template = get_template(template_path)
+                template_content = template.render()
+            except TemplateDoesNotExist:
+                return HttpResponse("Content not found", status=404)
+            except Exception as e:
+                print(e)
+                raise ValueError(e)
+            
+            if ext  == 'json':
+                return HttpResponse(template_content, content_type='application/json')            
+            elif ext == 'txt':
+                return HttpResponse(template_content, content_type='text/plain')            
+            elif ext == 'xml':
+                return HttpResponse(template_content, content_type='application/xml')            
+            elif ext == 'html':
+                return render(request, template_path, context)
+            else:
+                raise Http404      
+        else:
+            raise Http404      
+ 
 
     
 

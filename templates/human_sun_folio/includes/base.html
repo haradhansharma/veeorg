@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" data-overlayscrollbars-initialize="">
+
+<head>
+    {% include 'human_sun_folio/includes/insidehead.html' %}    
+</head>
+
+<body data-overlayscrollbars-initialize="">
+    <!-- Start: Webpage Loader -->
+    <div id="loader" class="d-print-none loader-overlay">
+        <div class="loader">
+            <div class="circle"></div>
+        </div>
+    </div><!-- End: Webpage Loader -->
+    <main id="main" class="main vw-100 m-0 d-block">
+        {% include 'human_sun_folio/includes/navbar.html' %} 
+        
+        {% block content %}        
+      
+        {% endblock %}
+
+        {% include 'human_sun_folio/includes/footer.html' %}
+        {% include 'human_sun_folio/includes/megamenu.html' %}   
+
+    </main>
+    {% include 'human_sun_folio/includes/scripts.html' %}
+    
+</body>
+
+</html>

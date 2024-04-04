@@ -1,0 +1,79 @@
+{% load static %}
+
+<!-- Start: Mega menu from Top -->
+<div class="offcanvas offcanvas-top bg-body min-vh-100 d-print-none" tabindex="-1" data-bs-scroll="true" id="offcanvas-menu">
+    <div class="offcanvas-header"><a class="link-body-emphasis d-flex align-items-center me-md-auto mb-3 mb-md-0 text-decoration-none" href="{% url 'core:human_sun_home' %}"><span class="fs-4"><img class="specialeffect magic-hover" width="220px" height="auto" alt="Human Sun Ancestor" src="{% static 'human_sun_folio/assets/img/Human_sun_ancestor.svg' %}"></span></a><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button></div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between pt-0">
+        <!-- Start: 1 Row 2 Columns -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="fs-2 fw-bolder vh-50" id="applyScrolbar" data-overlayscrollbars-initialize="">
+                        <div class="bg-transparent p-3"><a class="fs-2 fw-bolder text-decoration-none d-block lh-lg" href="{% url 'core:human_sun_home' %}"><i class="icon-home me-2"></i><span>Home</span></a>
+                            <ul class="list-unstyled fs-2 fw-bolder ps-0">
+                                <li class="mb-1 lh-lg"><a class="btn fs-2 fw-bolder btn-toggle rounded collapsed m-0 p-0 btn-link text-decoration-none" role="button" data-bs-toggle="collapse" data-bs-target="#sense-collapse" aria-expanded="true"> <i class="icon-book-open me-2"></i>Blogs</a>
+                                    <div id="sense-collapse" class="collapse ms-4">
+                                        <ul class="list-unstyled btn-toggle-nav pb-1">
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' 'blogs' %}"><i class="icon-list me-2"></i>List</a></li>
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' 'blog_details' %}"><i class="icon-badge me-2"></i>Details</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1 lh-lg"><a class="btn fs-2 fw-bolder btn-toggle rounded collapsed m-0 p-0 btn-link text-decoration-none" role="button" data-bs-toggle="collapse" data-bs-target="#project-collapse" aria-expanded="true"> <i class="icon-film me-2"></i>Projects</a>
+                                    <div id="project-collapse" class="collapse ms-4">
+                                        <ul class="list-unstyled btn-toggle-nav pb-1">
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' 'projects' %}"><i class="icon-list me-2"></i>List</a></li>
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' 'project_details' %}"><i class="icon-badge me-2"></i>Details</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1 lh-lg"><a class="btn fs-2 fw-bolder btn-toggle rounded collapsed m-0 p-0 btn-link text-decoration-none" role="button" data-bs-toggle="collapse" data-bs-target="#service-collapse" aria-expanded="true"> <i class="icon-bag me-2"></i>Service</a>
+                                    <div id="service-collapse" class="collapse ms-4">
+                                        <ul class="list-unstyled btn-toggle-nav pb-1">
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' 'services' %}"><i class="icon-list me-2"></i>List</a></li>
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' 'service_details' %}"><i class="icon-badge me-2"></i>Details</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mb-1 lh-lg"><a class="btn fs-2 fw-bolder btn-toggle rounded collapsed m-0 p-0 btn-link text-decoration-none" role="button" data-bs-toggle="collapse" data-bs-target="#pages-collapse" aria-expanded="true"> <i class="icon-layers me-2"></i>Pages</a>
+                                    <div id="pages-collapse" class="collapse ms-4">
+                                        <ul class="list-unstyled btn-toggle-nav pb-1">
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' '404' %}"><i class="icon-compass me-2"></i>404</a></li>
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' '500' %}"><i class="icon-chemistry me-2"></i>500</a></li>
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' '403' %}"><i class="icon-magic-wand me-2"></i>403</a></li>
+                                            <li><a class="rounded text-decoration-none" href="{% url 'core:human_sun_home_pages' 'about' %}"><i class="icon-present me-2"></i>About</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul><a class="fs-2 fw-bolder text-decoration-none d-block lh-lg" href="{% url 'core:human_sun_home_pages' 'contact' %}"><i class="icon-bubbles me-2"></i><span>Contact</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-start p-4 p-lg-5 position-relative"><img width="315" height="auto" alt="Haradhan Sharma" src="{% static 'human_sun_folio/assets/img/human_sun_sq.png' %}">
+                        <h1 class="text-uppercase fw-bold text-secondary my-3">human sun folio</h1>
+                        <p class="text-capitalize fs-5 text-success">MULTIDISCIPLINARY WEB DEV &amp; E-COM STRATEGIST | TECHNICAL PROJECT LEAD</p><!-- Start: Let's Talk Button -->
+                        <div class="lets-talk-container d-flex p-2 mb-2"><a class="active lets-talk btn-oval position-relative" href="{% url 'core:human_sun_home_pages' 'contact' %}"><span>Let's Talk</span><i class="la la-arrow-right lets-talk-icon"></i></a></div><!-- End: Let's Talk Button -->
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a class="btn btn-outline-primary fs-5" role="button" target="_blank" rel="nofollow" href="#" data-bs-target="#"><i class="la la-github fs-1 text-center"></i></a></li>
+                            <li class="list-inline-item"><a class="btn btn-outline-primary fs-5" role="button" target="_blank" rel="nofollow" href="#"><i class="la la-linkedin fs-1 text-center"></i></a></li>
+                            <li class="list-inline-item"><a class="btn btn-outline-primary fs-5" role="button" target="_blank" rel="nofollow" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-twitter fs-1 text-center">
+                                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                                    </svg></a></li>
+                            <li class="list-inline-item"><a class="btn btn-outline-primary fs-5" role="button" target="_blank" rel="nofollow" href="#"><i class="la la-facebook fs-1 text-center"></i></a></li>
+                            <li class="list-inline-item"><a class="btn btn-outline-primary fs-5" role="button" target="_blank" rel="nofollow" href="#"><i class="la la-youtube fs-1 text-center"></i></a></li>
+                            <li class="list-inline-item"><a class="btn btn-outline-primary fs-5" role="button" target="_blank" href="#" rel="author"><svg fill="var(--bs-success)" width="44px" height="44px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier"> 
+                            <path d="M24.75 17.542c-1.469 0-2.849-0.62-4.099-1.635l0.302-1.432 0.010-0.057c0.276-1.521 1.13-4.078 3.786-4.078 1.99 0 3.604 1.615 3.604 3.604 0 1.984-1.615 3.599-3.604 3.599zM24.75 6.693c-3.385 0-6.016 2.198-7.083 5.818-1.625-2.443-2.865-5.38-3.583-7.854h-3.646v9.484c-0.005 1.875-1.521 3.391-3.396 3.396-1.875-0.005-3.391-1.526-3.396-3.396v-9.484h-3.646v9.484c0 3.885 3.161 7.068 7.042 7.068 3.885 0 7.042-3.182 7.042-7.068v-1.589c0.708 1.474 1.578 2.974 2.635 4.297l-2.234 10.495h3.729l1.62-7.615c1.417 0.906 3.047 1.479 4.917 1.479 4 0 7.25-3.271 7.25-7.266 0-4-3.25-7.25-7.25-7.25z"></path> 
+                        </g>
+                    </svg></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End: 1 Row 2 Columns -->
+    </div>
+</div>
+<!-- End: Mega menu from Top -->

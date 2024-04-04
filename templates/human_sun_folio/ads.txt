@@ -1,0 +1,10 @@
+# Sample ads.txt file
+# Replace the following placeholders with your actual data:
+#   - example.com: Your domain
+#   - pub-1234567890123456: Your publisher ID
+#   - direct/123abc: Your account type and account ID
+#   - example.com/adserver: Your ad server domain
+
+google.com, pub-1234567890123456, DIRECT, direct/123abc
+example.com, pub-1234567890123456, DIRECT, direct/123abc
+example.com, pub-1234567890123456, RESELLER, example.com/adserver

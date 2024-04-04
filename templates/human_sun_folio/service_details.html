@@ -1,0 +1,192 @@
+{% extends "human_sun_folio/includes/base.html" %}
+{% load static %}        
+{% block content %}   
+        <!-- Start: content section -->
+        <section class="bg-secondary min-vh-100">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="container my-5 pb-5">
+                    <div class="row">
+                        <div class="col-12 mt-4 mt-xl-5">
+                            <div class="bg-body border rounded border-0 p-4 p-md-5 position-relative animate__animated animate__slower animate__zoomIn">
+                                <!-- Start: PageIndicator -->
+                                <h1 class="display-6 text-uppercase fw-bolder fs-8vw position-absolute top-0 start-0 specialeffect magic-hover" style="mix-blend-mode: soft-light;">the service</h1><!-- End: PageIndicator --><a class="border-light position-absolute top-0 end-0 p-2 text-decoration-none" data-bss-hover-animate="pulse" href="{% url 'core:human_sun_home_pages' 'services' %}"><i class="la la-close fs-1 text-light border rounded border-2 border-light"></i></a>
+                                <div class="row d-flex">
+                                    <div class="col-lg-8 d-flex align-items-end">
+                                        <div class="flex-fill">
+                                            <h2 class="text-uppercase fs-3 fw-bold mb-3">Creative Web Design Services</h2>
+                                            <p class="fs-5 fw-normal lh-sm text-justify">Discover my creative web design services. From concept to execution, I specialize in crafting stunning and intuitive interfaces that captivate audiences and drive engagement.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex">
+                                        <div class="d-flex flex-fill justify-content-end align-items-center"><img src="{% static 'human_sun_folio/assets/img/kabutor_wh.svg' %}" height="150px" alt="creative web design service" loading="lazy" width="auto"></div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center align-items-start p-2 p-lg-3">
+                                    <div class="col-12 mt-0 mb-3 px-0">
+                                        <div class="card border-0 flex-fill w-100 rounded-bottom-5"><img class="img-fluid card-img-top w-100 d-block rounded-top-5" src="{% static 'human_sun_folio/assets/img/project1.webp' %}" loading="lazy" width="100%" height="auto" alt="service image">
+                                            <div class="card-body bg-info rounded-bottom-5">
+                                                <div class="row mt-5">
+                                                    <div class="col">
+                                                        <h2 class="fs-3 fw-bold side-block-title">About Creative Web Design Service:</h2>
+                                                        <p class="fs-5 lh-sm text-justify">Our Creative Web Design service focuses on bringing your brand to life through visually captivating and user-friendly website interfaces. We believe in blending creativity with functionality to create experiences that resonate with your audience and leave a lasting impression.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-5">
+                                                    <div class="col">
+                                                        <h2 class="fs-3 fw-bold side-block-title">My Experience in Creative Web Design:</h2>
+                                                        <ul class="fs-5 fw-normal lh-base text-justify">
+                                                            <li>Over 5 years of experience crafting unique and innovative web designs.</li>
+                                                            <li>Successfully completed numerous projects spanning various industries.</li>
+                                                            <li>Expertise in understanding client requirements and translating them into visually appealing designs.</li>
+                                                            <li>Continuous learning and staying updated with the latest design trends and technologies.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-5">
+                                                    <div class="col">
+                                                        <h2 class="fs-3 fw-bold side-block-title">My Skills in Creative Web Design:</h2>
+                                                        <div class="row gx-2 gy-2">
+                                                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+                                                                <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                <div class="card bg-danger-subtle border-danger flex-fill w-100 rounded-5 cardeffectEx">
+                                                                    <div class="card-body text-center"><!-- from https://www.svgrepo.com/ -->
+
+                                                                        <svg fill="none" height="64px" width="64px" version="1.1" id="mat_ico1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-48.5 -48.5 582.00 582.00" xml:space="red" stroke="red" stroke-width="6"><path d="M321.27,328.414c-16.269,0-37.082-7.252-47.173-13.307l-9.743,39.196c13.307,7.252,33.866,12.299,56.916,12.299 c50.361,0,76.376-24.124,76.376-57.012c-0.379-25.891-14.412-42.887-47.932-54.333c-21.537-7.631-28.318-11.952-28.318-20.213 c0-8.988,7.506-14.412,20.813-14.412c15.136,0,30.177,5.803,38.185,10.122l9.714-37.839c-10.817-5.424-29.168-10.091-49.76-10.091 c-43.58,0-71.676,24.88-71.676,57.644c-0.379,20.938,13.655,40.774,50.139,52.976c20.432,6.906,25.856,11.194,25.856,20.182 C344.668,322.644,337.762,328.414,321.27,328.414z"></path> <path d="M141.687,276.194c5.045,0.726,11.573,0.978,18.698,0.978c32.417,0,60.23-7.883,78.834-25.479 c14.539-13.686,22.42-33.899,22.42-57.643c0-23.777-10.343-43.99-25.983-56.194c-16.146-13.055-40.268-19.456-74.167-19.456 c-33.489,0-57.264,2.21-74.136,5.046v239.593h54.333V276.194z M141.782,162.012c3.847-1.105,11.479-2.209,22.547-2.209 c27.465,0,42.885,13.276,43.01,35.572c0,24.911-18.132,39.669-47.3,39.669c-7.884,0-13.559-0.346-18.257-1.357V162.012z"></path> <path d="M0,0v485h485V0H0z M455,455H30V30h425V455z"></path> </svg>
+                                                                        <h5 class="text-uppercase fs-5 fw-bolder text-danger card-title py-2">PHOTOSHOP</h5>
+                                                                        <div>
+                                                                            <p class="text-uppercase fs-5 text-danger lh-sm mb-0 mt-4">skill lavel</p>
+                                                                            <p class="text-uppercase fs-5 fw-bold text-danger lh-sm">85%</p>
+                                                                        </div>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-danger progress-bar-striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"><span class="visually-hidden">85%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+                                                                <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5 cardeffectEx">
+                                                                    <div class="card-body text-center"><!-- from https://www.svgrepo.com/ -->
+
+                                                                        <svg width="64px" height="64px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#198754"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M889.202585 296.368893v432.636883l-374.709001 216.334426-374.677031-216.334426V296.368893l374.677031-216.334426z" fill="#198754"></path><path d="M514.493584 967.718523a22.378321 22.378321 0 0 1-11.18916-2.998695l-374.677032-216.334426a22.381518 22.381518 0 0 1-11.18916-19.382823V296.368893a22.375124 22.375124 0 0 1 11.18916-19.379626l374.677032-216.334426a22.36873 22.36873 0 0 1 22.378321 0l374.709 216.334426a22.375124 22.375124 0 0 1 11.189161 19.379626v432.636883a22.381518 22.381518 0 0 1-11.189161 19.382823l-374.709 216.334426a22.407093 22.407093 0 0 1-11.189161 2.995498z m-352.29871-251.631432l352.29871 203.412544 352.33068-203.412544V309.287578l-352.33068-203.412544-352.29871 203.412544v406.799513z" fill="#f2f2f2"></path><path d="M407.780962 735.943055c-48.343567 0-93.79074-18.826562-127.972027-53.007848-34.200468-34.197271-53.036621-79.657232-53.036621-128.0008v-221.289625a22.378321 22.378321 0 1 1 44.756642 0v221.289625c0 36.390347 14.181462 70.6068 39.929319 96.354657 25.725478 25.731872 59.935537 39.897349 96.322687 39.897349 75.127221 0 136.252006-61.121588 136.252006-136.252006v-221.289625a22.378321 22.378321 0 1 1 44.756642 0v221.289625c0 99.807312-81.201336 181.008648-181.008648 181.008648zM706.307764 735.943055a22.378321 22.378321 0 0 1-22.378321-22.378321v-379.919952a22.378321 22.378321 0 1 1 44.756642 0v379.919952a22.378321 22.378321 0 0 1-22.378321 22.378321z" fill="#f2f2f2"></path><path d="M407.780962 657.203334c-30.818145 0-59.762905-11.99478-81.501845-33.772083-21.751728-21.710168-33.746508-50.667716-33.746508-81.505042v-206.267378a22.378321 22.378321 0 1 1 44.756642 0v206.267378c0 18.868122 7.327302 36.57257 20.636009 49.858899 13.311904 13.337479 31.006762 20.664781 49.855702 20.664781 38.871144 0 70.491711-31.636552 70.491711-70.52368v-206.267378a22.378321 22.378321 0 1 1 44.756642 0v206.267378c0 63.564022-51.700315 115.277125-115.248353 115.277125zM776.63963 735.943055a22.378321 22.378321 0 0 1-22.378321-22.378321v-379.919952a22.378321 22.378321 0 1 1 44.756642 0v379.919952a22.378321 22.378321 0 0 1-22.378321 22.378321z" fill="#f2f2f2"></path></g></svg>
+                                                                        <h5 class="text-uppercase fs-5 fw-bolder text-success card-title py-2">UI/UX Design</h5>
+                                                                        <div>
+                                                                            <p class="text-uppercase fs-5 text-success lh-sm mb-0 mt-4">skill lavel</p>
+                                                                            <p class="text-uppercase fs-5 fw-bold text-success lh-sm">90%</p>
+                                                                        </div>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-success progress-bar-striped" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"><span class="visually-hidden">90%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+                                                                <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                <div class="card bg-info-subtle border-info flex-fill w-100 rounded-5 cardeffectEx">
+                                                                    <div class="card-body text-center"><!-- from https://www.svgrepo.com/ -->
+
+                                                                        <svg width="64px" height="64px" id="mat_ico3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#198754" stroke-width="0.5"> <path d="M19,5V19H5V5H19m0-2H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5a2,2,0,0,0-2-2Z"></path> <path d="M12.3,16.18l-.57-1.87H8.86l-.57,1.87H6.5L9.27,8.29h2l2.78,7.89Zm-1-3.27c-.53-1.69-.82-2.65-.89-2.87s-.11-.4-.14-.53c-.12.46-.46,1.6-1,3.4Z"></path> <path d="M14.88,8.62c0-.53.3-.8.89-.8s.89.27.89.8a.76.76,0,0,1-.22.59.9.9,0,0,1-.67.22C15.18,9.43,14.88,9.16,14.88,8.62Zm1.71,7.56H15v-6h1.64Z"></path> </svg>
+                                                                        <h5 class="text-uppercase fs-5 fw-bolder text-info card-title py-2">illustrator</h5>
+                                                                        <div>
+                                                                            <p class="text-uppercase fs-5 text-info lh-sm mb-0 mt-4">skill lavel</p>
+                                                                            <p class="text-uppercase fs-5 fw-bold text-info lh-sm">80%</p>
+                                                                        </div>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-info progress-bar-striped" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="visually-hidden">80%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+                                                                <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                <div class="card bg-secondary-subtle border-secondary flex-fill w-100 rounded-5 cardeffectEx">
+                                                                    <div class="card-body text-center"><!-- from https://www.svgrepo.com/ -->
+
+                                                                        <svg height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.998 511.998" xml:space="preserve" fill="#02403A" stroke="#02403A"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#CCD8E5;" d="M503.662,56.081v316.341c0,17.908-14.509,32.428-32.417,32.428H40.755 c-17.908,0-32.417-14.52-32.417-32.428V56.081c0-17.908,14.509-32.428,32.417-32.428h430.49 C489.153,23.653,503.662,38.173,503.662,56.081z"></path> <path style="fill:#DFEAF4;" d="M503.662,56.081v316.341c0,17.908-14.509,32.428-32.417,32.428H183.344l23.752-57.924L339.654,23.653 h131.591C489.153,23.653,503.662,38.173,503.662,56.081z"></path> <path style="fill:#F2B544;" d="M503.662,56.081v290.845H8.338V56.081c0-17.908,14.509-32.428,32.417-32.428h430.49 C489.153,23.653,503.662,38.173,503.662,56.081z"></path> <path style="fill:#D4F7FC;" d="M503.662,56.081v290.845H207.096L339.654,23.653h131.591 C489.153,23.653,503.662,38.173,503.662,56.081z"></path> <polygon style="fill:#CCD8E5;" points="343.453,469.452 168.547,469.452 181.034,440.234 196.165,404.85 315.835,404.85 330.966,440.234 "></polygon> <polygon style="fill:#BAC6D1;" points="330.966,440.234 181.034,440.234 196.165,404.85 315.835,404.85 "></polygon> <path style="fill:#CCD8E5;" d="M454.542,237.484v232.409c0,11.598-9.399,20.997-20.997,20.997H312.23 c-0.689,0-1.355-0.033-2.022-0.1c-10.654-1.011-18.975-9.987-18.975-20.897V237.484c0-11.598,9.399-20.997,20.997-20.997h121.315 C445.143,216.488,454.542,225.886,454.542,237.484z"></path> <path style="fill:#DFEAF4;" d="M454.542,237.484v232.409c0,11.598-9.399,20.997-20.997,20.997H312.23 c-0.689,0-1.355-0.033-2.022-0.1L422.68,216.488h10.865C445.143,216.488,454.542,225.886,454.542,237.484z"></path> <path style="fill:#F2B544;" d="M454.542,237.484v202.303H291.234V237.485c0-11.598,9.399-20.997,20.997-20.997h121.315 C445.143,216.488,454.542,225.886,454.542,237.484z"></path> <path style="fill:#D4F7FC;" d="M454.542,237.484v202.303H331.116l91.564-223.299h10.865 C445.143,216.488,454.542,225.886,454.542,237.484z"></path> <path d="M471.24,14.053H40.749C18.281,14.053,0,32.332,0,54.802v59.224c0,4.602,3.731,8.332,8.332,8.332s8.332-3.731,8.332-8.332 V54.802c0-13.281,10.805-24.085,24.085-24.085h430.49c13.287,0,24.096,10.805,24.096,24.085v284.412h-32.462V236.204 c0-16.17-13.155-29.324-29.324-29.324H312.226c-16.17,0-29.324,13.155-29.324,29.324v159.036H40.749 c-13.28,0-24.085-10.805-24.085-24.085v-15.275H263.46c4.602,0,8.332-3.731,8.332-8.332s-3.731-8.332-8.332-8.332H16.664V141.8 c0-4.602-3.731-8.332-8.332-8.332S0,137.199,0,141.8v229.354c0,22.47,18.281,40.749,40.749,40.749h142.787l-20.495,47.948h-40.027 c-4.602,0-8.332,3.731-8.332,8.332c0,4.602,3.731,8.332,8.332,8.332h45.526h92.856h1.111c4.602,0,8.332-3.731,8.332-8.332 c0-4.602-3.731-8.332-8.332-8.332h-1.111h-80.233l14.241-33.317h87.497v42.086c0,16.17,13.155,29.324,29.324,29.324h121.323 c16.17,0,29.324-13.155,29.324-29.324V355.879h32.462v15.275c0,9.701-5.778,18.413-14.72,22.196 c-4.238,1.793-6.221,6.681-4.428,10.919c1.344,3.18,4.43,5.089,7.678,5.089c1.082,0,2.183-0.212,3.242-0.66 c15.121-6.396,24.892-21.132,24.892-37.543V54.802C512,32.332,493.715,14.053,471.24,14.053z M299.566,236.204 c0-6.981,5.679-12.66,12.66-12.66h121.323c6.981,0,12.66,5.679,12.66,12.66v193.975H299.564V236.204H299.566z M433.549,481.282 H312.226c-6.981,0-12.66-5.679-12.66-12.66v-21.779H446.21v21.779C446.21,475.602,440.531,481.282,433.549,481.282z"></path> <path d="M262.924,368.954c-3.987-6.049-13.707-4.123-15.098,3c-0.672,3.439,0.933,7.043,3.962,8.811 c3.025,1.765,6.959,1.424,9.621-0.855C264.589,377.188,265.22,372.441,262.924,368.954z"></path> <path d="M380.584,460.874c-1.324-3.138-4.479-5.226-7.901-5.138c-3.412,0.087-6.483,2.309-7.633,5.519 c-1.173,3.277-0.134,7.034,2.553,9.246c2.798,2.304,6.888,2.494,9.904,0.494C380.799,468.81,382.043,464.517,380.584,460.874z"></path> <path d="M350.113,250.206h45.549c4.602,0,8.332-3.731,8.332-8.332s-3.731-8.332-8.332-8.332h-45.549 c-4.602,0-8.332,3.731-8.332,8.332S345.512,250.206,350.113,250.206z"></path> </g></svg>
+                                                                        <h5 class="text-uppercase fs-5 fw-bolder text-secondary card-title py-2">Responsive Design</h5>
+                                                                        <div>
+                                                                            <p class="text-uppercase fs-5 text-secondary lh-sm mb-0 mt-4">skill lavel</p>
+                                                                            <p class="text-uppercase fs-5 fw-bold text-secondary lh-sm">95%</p>
+                                                                        </div>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-secondary progress-bar-striped" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"><span class="visually-hidden">95%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+                                                                <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                <div class="card bg-dark-subtle border-dark flex-fill w-100 rounded-5 cardeffectEx">
+                                                                    <div class="card-body text-center"><!-- from https://www.svgrepo.com/ -->
+
+                                                                        <svg width="64px" height="64px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#0D0D0D"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="0" fill="none" width="20" height="20"></rect> <g> <path d="M4 16v-2H2v2H1v-5h1v2h2v-2h1v5H4zM7 16v-4H5.6v-1h3.7v1H8v4H7zM10 16v-5h1l1.4 3.4h.1L14 11h1v5h-1v-3.1h-.1l-1.1 2.5h-.6l-1.1-2.5H11V16h-1zM19 16h-3v-5h1v4h2v1zM9.4 4.2L7.1 6.5l2.3 2.3-.6 1.2-3.5-3.5L8.8 3l.6 1.2zm1.2 4.6l2.3-2.3-2.3-2.3.6-1.2 3.5 3.5-3.5 3.5-.6-1.2z"></path> </g> </g></svg>
+                                                                        <h5 class="text-uppercase fs-5 fw-bolder text-dark card-title py-2">HTML/CSS</h5>
+                                                                        <div>
+                                                                            <p class="text-uppercase fs-5 text-dark lh-sm mb-0 mt-4">skill lavel</p>
+                                                                            <p class="text-uppercase fs-5 fw-bold text-dark lh-sm">85%</p>
+                                                                        </div>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-dark progress-bar-striped" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"><span class="visually-hidden">85%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
+                                                                <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                <div class="card bg-primary-subtle border-primary flex-fill w-100 rounded-5 cardeffectEx">
+                                                                    <div class="card-body text-center"><!-- from https://www.svgrepo.com/ -->
+
+                                                                        <svg width="64px" height="64px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="nonzero" clip-rule="nonzero" d="M0 1.75C0 0.783501 0.783502 0 1.75 0H14.25C15.2165 0 16 0.783502 16 1.75V3.75C16 4.16421 15.6642 4.5 15.25 4.5C14.8358 4.5 14.5 4.16421 14.5 3.75V1.75C14.5 1.61193 14.3881 1.5 14.25 1.5H1.75C1.61193 1.5 1.5 1.61193 1.5 1.75V14.25C1.5 14.3881 1.61193 14.5 1.75 14.5H15.25C15.6642 14.5 16 14.8358 16 15.25C16 15.6642 15.6642 16 15.25 16H1.75C0.783501 16 0 15.2165 0 14.25V1.75ZM8.25 5.75C8.66421 5.75 9 6.08579 9 6.5V10.5C9 11.5048 8.72399 12.2584 8.15514 12.7324C7.61223 13.1848 6.95384 13.25 6.5 13.25C6.08579 13.25 5.75 12.9142 5.75 12.5C5.75 12.0858 6.08579 11.75 6.5 11.75C6.84617 11.75 7.06277 11.6902 7.19486 11.5801C7.301 11.4916 7.5 11.2452 7.5 10.5V6.5C7.5 6.08579 7.83578 5.75 8.25 5.75ZM11.2757 6.58011C11.6944 6.08164 12.3507 5.75 13.25 5.75C14.0849 5.75 14.7148 6.03567 15.1394 6.48481C15.4239 6.78583 15.4105 7.26052 15.1095 7.54505C14.8085 7.82958 14.3338 7.81621 14.0493 7.51519C13.9394 7.39898 13.7204 7.25 13.25 7.25C12.7493 7.25 12.5306 7.41836 12.4243 7.54489C12.2934 7.70065 12.25 7.896 12.25 8C12.25 8.104 12.2934 8.29935 12.4243 8.45511C12.5306 8.58164 12.7493 8.75 13.25 8.75C13.3257 8.75 13.3988 8.76121 13.4676 8.78207C14.1307 8.87646 14.6319 9.17251 14.9743 9.58011C15.3684 10.0493 15.5 10.604 15.5 11C15.5 11.396 15.3684 11.9507 14.9743 12.4199C14.5556 12.9184 13.8993 13.25 13 13.25C12.1651 13.25 11.5352 12.9643 11.1106 12.5152C10.8261 12.2142 10.8395 11.7395 11.1405 11.4549C11.4415 11.1704 11.9162 11.1838 12.2007 11.4848C12.3106 11.601 12.5296 11.75 13 11.75C13.5007 11.75 13.7194 11.5816 13.8257 11.4551C13.9566 11.2993 14 11.104 14 11C14 10.896 13.9566 10.7007 13.8257 10.5449C13.7194 10.4184 13.5007 10.25 13 10.25C12.9243 10.25 12.8512 10.2388 12.7824 10.2179C12.1193 10.1235 11.6181 9.82749 11.2757 9.41989C10.8816 8.95065 10.75 8.396 10.75 8C10.75 7.604 10.8816 7.04935 11.2757 6.58011Z" fill="#02403A"></path> </g></svg>
+                                                                        <h5 class="text-uppercase fs-5 fw-bolder text-primary card-title py-2">JavaScript</h5>
+                                                                        <div>
+                                                                            <p class="text-uppercase fs-5 text-primary lh-sm mb-0 mt-4">skill lavel</p>
+                                                                            <p class="text-uppercase fs-5 fw-bold text-primary lh-sm">75%</p>
+                                                                        </div>
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-primary progress-bar-striped" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"><span class="visually-hidden">75%</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 rounded-5 mt-0 mb-3">
+                                        <div class="row">
+                                            <div class="col-12 p-0">
+                                                <!-- Start: MyLearningCurve -->
+                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5 cardeffectEx">
+                                                    <div class="card-body position-relative my-background-pic">
+                                                        <h5 class="text-uppercase fs-3 fw-bolder text-success-emphasis card-title side-block-title">my learnng curves</h5>
+                                                        <div>
+                                                            <p class="fs-6 fw-light text-success-emphasis lh-sm text-justify">While my formal education concluded at the 14th standard, my true expertise comes from an unwavering dedication to lifelong learning and practical, hands-on experience. I have cultivated a rich professional knowledge base by proactively seeking out and mastering new technologies as they become relevant to my field.</p>
+                                                            <p class="text-uppercase fs-6 fw-bold text-success-emphasis lh-sm">Key Qualifications:</p>
+                                                            <ul class="fs-6 fw-light text-success-emphasis lh-sm offset-1 text-justify">
+                                                                <li><span class="fw-bold">Self-Taught Expertise:&nbsp;</span><span class="fw-normal">My comprehensive knowledge in web development, e-commerce, and digital design stems from a disciplined approach to self-education and a passion for staying at the forefront of technological advancements.</span></li>
+                                                                <li><span class="fw-bold">Practical Application:&nbsp;</span><span class="fw-normal">My skills have been honed through years of direct industry experience, ensuring that my learning is rooted in real-world application and problem-solving.</span></li>
+                                                                <li><span class="fw-bold">Quick Learner:&nbsp;</span><span class="fw-normal">I adapt swiftly to emerging tools and techniques, enabling me to meet the evolving needs of my clients with the most current and effective solutions.</span></li>
+                                                                <li><span class="fw-bold">Continuous Improvement:&nbsp;</span><span class="fw-normal">I am committed to ongoing skill enhancement, regularly updating my professional repertoire to include the latest in web development, software, and digital marketing strategies.</span></li>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="fs-6 fw-light text-success-emphasis card-text lh-sm text-justify">Through continuous learning and a drive to excel in my endeavors, I provide services that reflect a deep understanding of both the fundamentals and the intricacies of my craft.</p>
+                                                    </div>
+                                                </div><!-- End: MyLearningCurve -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 rounded-5 mt-0 mb-3">
+                                        <div class="card border-0 flex-fill w-100 rounded-5 bg-transparent">
+                                            <div class="card-body"><iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fbootstrapstudio.io%2F&amp;layout=standard&amp;action=like&amp;size=small&amp;show_faces=true&amp;share=true" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" width="450" height="80"></iframe></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End: content section -->
+        {% endblock %}

@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /*.pdf$
+Crawl-delay: 10
+Disallow: /robot-art/
+
+User-agent: Googlebot
+Disallow:
+
+User-agent: BadBot
+Disallow: /
+
+Sitemap: https://www.example.com/sitemap.xml

@@ -13,6 +13,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 environ.Env.read_env(os.path.join(BASE_DIR, '.env.veerera'))
 
 DEBUG = ast.literal_eval(os.getenv('DEBUG', 'False'))
+# DEBUG = True
+
 SECRET_KEY = str(os.getenv("SECRET_KEY"))
 if not SECRET_KEY:
     raise ValueError("No DJANGO_SECRET_KEY set for production!")

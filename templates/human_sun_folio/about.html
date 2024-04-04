@@ -1,0 +1,207 @@
+{% extends "human_sun_folio/includes/base.html" %}
+{% load static %}        
+{% block content %}   
+<!-- Start: Content section -->
+<section class="bg-secondary bg-opacity-75 min-vh-100">
+    <div class="d-flex justify-content-center align-items-center d-print-flex">
+        <div class="container my-5 pb-5">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center mt-4 mt-xl-5">
+                    <div class="bg-body border rounded border-0 p-padding p-4 p-md-5 position-relative animate__animated animate__slower animate__zoomIn">
+                        <!-- Start: PageIndicatorShading -->
+                        <h1 class="display-6 text-uppercase fw-bolder fs-8vw position-absolute top-0 start-0 text-light d-print-none specialeffect magic-hover" style="mix-blend-mode: soft-light;">about me&nbsp;</h1><!-- End: PageIndicatorShading --><a class="border-light position-absolute top-0 end-0 p-2 text-decoration-none d-print-none" data-bss-hover-animate="pulse" href="{% url 'core:human_sun_home' %}"><i class="la la-close fs-1 text-light border rounded border-2 border-light"></i></a>
+                        <div class="row d-flex">
+                            <div class="col-lg-9 d-flex align-items-center d-print-none">
+                                <div class="flex-fill">
+                                    <h2 class="text-uppercase fs-5 fw-bold mb-2">Hello,</h2>
+                                    <p class="fs-5 fw-bolder lh-sm text-justify">I am Human Sun Folio, Multidisciplinary Web Developer &amp; E-Commerce Strategist, Technical Project Lead And Entrepreneur.</p>
+                                    <p class="fs-5 fw-normal lh-sm text-justify" style="font-family: Aldrich, sans-serif;">Since I started my career as a designer almost 20 years ago, I've worked remotely for agencies, consulted for start-ups and talented people to create digital products for commercial and consumer use.</p>
+                                </div>
+                            </div><!-- Start: for printing display -->
+                            <div class="col d-none d-print-block">
+                                <div class="d-flex justify-content-between align-items-end"><img src="{% static 'human_sun_folio/assets/img/humn_sun_picture_about.png' %}" width="120px" height="auto" alt="Haradhan Sharma">
+                                    <div class="text-end">
+                                        <h2 class="text-uppercase fs-3 fw-bold">human sun folio</h2>
+                                        <p class="fs-6 fw-bold lh-sm m-0 border-bottom border-bottom-1 border-primary">Multidisciplinary Web Developer &amp; E-Commerce Strategist, Technical Project Lead And Entrepreneur</p>
+                                        <p class="fs-6 fw-bold lh-sm m-0">haradhan.sharma@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="fs-6 fw-normal lh-sm text-justify text-muted">Since I started my career as a designer almost 20 years ago, I've worked remotely for agencies, consulted for start-ups and talented people to create digital products for commercial and consumer use.</p>
+                                </div>
+                            </div><!-- End: for printing display -->
+                            <div class="col-lg-3 d-flex justify-content-center align-items-center d-print-none">
+                                <div class="d-flex flex-fill justify-content-center align-items-center"><button class="btn btn-secondary d-print-none printButton text-center position-absolute end-0 my-4 rounded-end-0" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-printer fs-3">
+                                            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"></path>
+                                            <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"></path>
+                                        </svg></button><img class="img-fluid p-4 specialeffectImage magic-hover" width="80%" height="auto" alt="Haradha Sharma" loading="lazy" src="{% static 'human_sun_folio/assets/img/humn_sun_picture_about.png' %}"></div>
+                            </div>
+                        </div>
+                        <div class="col-12 bg-info mt-5 border rounded-5 border-0">
+                            <div class="row gx-3 d-flex justify-content-center align-items-start">
+                                <div class="col-md-8">
+                                    <div class="row gx-3 gy-3 d-flex justify-content-center align-items-center">
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <!-- Start: My Experiences -->
+                                            <div class="card bg-success-subtle border-success flex-fill w-100 rounded-4">
+                                                <div class="card-body position-relative my-background-pic">
+                                                    <h5 class="text-uppercase fs-5 fw-bolder text-primary card-title side-block-title">My Experiences:&nbsp;</h5>
+                                                    <div>
+                                                        <ul class="fs-6 fw-light text-info lh-sm">
+                                                            <li><span class="fw-bold">Web Developer and Technology Enthusiast ||&nbsp;</span><span class="fw-normal text-justify">Numerous companies worldwide -- Freelance&nbsp;</span>
+                                                                <div><span class="fw-normal text-warning">Aug 2004 - Present</span></div>
+                                                            </li>
+                                                            <li class="text-justify"><span class="fw-bold">Founder and Entrepreneur ||&nbsp;</span><span class="fw-normal">Apparel brand -- Self-employed</span>
+                                                                <div><span class="fw-normal text-warning">Dec 2019 - Nov 2022</span></div>
+                                                            </li>
+                                                            <li><span class="fw-bold">Production Planning and Coordination ||&nbsp;</span><span class="fw-normal text-justify">Numerous companies within Bangladesh -- Full-time</span>
+                                                                <div><span class="fw-normal text-warning">Nov 2002 - Nov 2019</span></div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><!-- End: My Experiences -->
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <!-- Start: What I do -->
+                                            <div class="card bg-secondary-subtle border-secondary flex-fill rounded-4">
+                                                <div class="card-body position-relative">
+                                                    <h5 class="text-uppercase fs-5 fw-bolder text-primary card-title side-block-title">What I Do:</h5>
+                                                    <div>
+                                                        <ul class="fs-6 fw-light text-info lh-sm">
+                                                            <li class="text-justify"><span class="fw-bold">Innovative Textile Design:&nbsp;</span><span class="fw-normal text-justify">Seamlessly integrating traditional textile craftsmanship with digital innovation, including 3D fashion modeling using CLO3D.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Full-Stack Web Development:&nbsp;</span><span class="fw-normal text-justify">Developing end-to-end web solutions using Drupal, WordPress, Django, and Python for a streamlined user experience.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">E-Commerce Expertise:&nbsp;</span><span class="fw-normal text-justify">Creating and managing e-commerce platforms for maximum user engagement and operational efficiency, including Amazon storefronts.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Robust Backend Systems:&nbsp;</span><span class="fw-normal text-justify">Crafting secure and scalable backend infrastructures that ensure uninterrupted business operations.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Engaging Frontend Experiences:&nbsp;</span><span class="fw-normal text-justify">Designing user interfaces that effectively communicate your brand's message and enhance user interaction.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Graphic Design &amp; Multimedia:&nbsp;</span><span class="fw-normal text-justify">Delivering high-impact visual content using tools like Photoshop, Illustrator, and Filmora for graphic and video editing.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Business Management &amp; Operations:&nbsp;</span><span class="fw-normal text-justify">Streamlining business processes with my in-depth knowledge of management, planning, and coordination.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">CRM &amp; ERP Solutions:&nbsp;</span><span class="fw-normal text-justify">Implementing and optimizing Customer Relationship Management (CRM) and Enterprise Resource Planning (ERP) systems to drive business efficiency.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">API Development &amp; Integration:&nbsp;</span><span class="fw-normal text-justify">Building and integrating Application Programming Interfaces (APIs) to enhance software interconnectivity and functionality.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Branding &amp; Identity Development:&nbsp;</span><span class="fw-normal text-justify">Crafting unique brand identities that resonate with your target audience and reflect the core values of your business.</span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><!-- End: What I do -->
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <!-- Start: My Learning Curves -->
+                                            <div class="card bg-info-subtle border-info flex-fill w-100 rounded-4">
+                                                <div class="card-body position-relative my-background-pic">
+                                                    <h5 class="text-uppercase fs-5 fw-bolder text-primary card-title side-block-title">my learnng curves</h5>
+                                                    <div>
+                                                        <p class="fs-6 fw-light text-info lh-sm text-justify">While my formal education concluded at the 14th standard, my true expertise comes from an unwavering dedication to lifelong learning and practical, hands-on experience. I have cultivated a rich professional knowledge base by proactively seeking out and mastering new technologies as they become relevant to my field.</p>
+                                                        <p class="text-uppercase fs-6 fw-bold text-primary lh-sm">Key Qualifications:</p>
+                                                        <ul class="fs-6 fw-light text-info lh-sm offset-1">
+                                                            <li class="text-justify"><span class="fw-bold">Self-Taught Expertise:&nbsp;</span><span class="fw-normal text-justify">My comprehensive knowledge in web development, e-commerce, and digital design stems from a disciplined approach to self-education and a passion for staying at the forefront of technological advancements.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Practical Application:&nbsp;</span><span class="fw-normal text-justify">My skills have been honed through years of direct industry experience, ensuring that my learning is rooted in real-world application and problem-solving.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Quick Learner:&nbsp;</span><span class="fw-normal text-justify">I adapt swiftly to emerging tools and techniques, enabling me to meet the evolving needs of my clients with the most current and effective solutions.</span></li>
+                                                            <li class="text-justify"><span class="fw-bold">Continuous Improvement:&nbsp;</span><span class="fw-normal text-justify">I am committed to ongoing skill enhancement, regularly updating my professional repertoire to include the latest in web development, software, and digital marketing strategies.</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="fs-6 fw-light text-info card-text lh-sm text-justify">Through continuous learning and a drive to excel in my endeavors, I provide services that reflect a deep understanding of both the fundamentals and the intricacies of my craft.</p>
+                                                </div>
+                                            </div><!-- End: My Learning Curves -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row gx-3 gy-3 d-flex justify-content-center align-items-center">
+                                        <div class="col-12 d-flex justify-content-center align-items-center d-print-none">
+                                            <div class="card bg-light-subtle border-light text-center w-100 rounded-4">
+                                                <div class="card-body text-dark">
+                                                    <h2 class="fw-bolder card-title fs-1x">+20</h2>
+                                                    <p class="text-uppercase fs-5 fw-bold card-text lh-sm" style="font-family: Aldrich, sans-serif;">years Experience</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center d-print-none">
+                                            <div class="card bg-warning-subtle border-warning text-center w-100 rounded-4">
+                                                <div class="card-body text-primary">
+                                                    <h2 class="fw-bolder card-title fs-1x">+05</h2>
+                                                    <p class="text-uppercase fs-5 fw-bold card-text lh-sm" style="font-family: Aldrich, sans-serif;">heavy industries</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center d-print-none">
+                                            <div class="card bg-info-subtle border-info text-center w-100 rounded-4">
+                                                <div class="card-body text-secondary">
+                                                    <h2 class="fw-bolder card-title fs-1x">+15</h2>
+                                                    <p class="text-uppercase fs-5 fw-bold card-text lh-sm" style="font-family: Aldrich, sans-serif;">global clients</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <div class="card bg-danger-subtle w-100 rounded-4">
+                                                <div class="card-body text-secondary">
+                                                    <h2 class="fs-5 fw-bolder card-title side-block-title">Skills And Tools</h2>
+                                                    <ul class="list-inline text-capitalize fs-5 lh-sm">
+                                                        <li class="list-inline-item text-capitalize fs-6 fw-semibold text-info badge bg-light text-primary rounded-2 d-inline-block float-start m-1">drupal<div class="d-print-none">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-striped" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-inline-item text-capitalize fs-6 fw-semibold text-info badge bg-light text-primary rounded-2 d-inline-block float-start m-1">photoshop<div class="d-print-none">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-striped" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-inline-item text-capitalize fs-6 fw-semibold text-info badge bg-light text-primary rounded-2 d-inline-block float-start m-1">illustrator<div class="d-print-none">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-striped" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-inline-item text-capitalize fs-6 fw-semibold text-info badge bg-light text-primary rounded-2 d-inline-block float-start m-1">django<div class="d-print-none">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-striped" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="visually-hidden">50%</span></div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <div class="card bg-light-subtle border-light w-100 rounded-4">
+                                                <div class="card-body text-primary">
+                                                    <h2 class="fs-5 fw-bolder card-title side-block-title">LANGUAGE</h2>
+                                                    <ul class="fs-5 lh-sm">
+                                                        <li class="fw-bold">Bengali<span class="fs-6 fw-light">&nbsp;(Native)</span></li>
+                                                        <li class="fw-bold">English<span class="fs-6 fw-light">&nbsp;(Professional)</span></li>
+                                                        <li class="fw-bold">Hindi<span class="fs-6 fw-light">&nbsp;(Hobby)</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <div class="card bg-secondary-subtle border-secondary w-100 rounded-4">
+                                                <div class="card-body text-info">
+                                                    <h2 class="fs-5 fw-bolder card-title side-block-title">INTEREST</h2>
+                                                    <ul class="fs-5 lh-sm">
+                                                        <li>Reading</li>
+                                                        <li>Writing</li>
+                                                        <li>Exploring</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center align-items-center d-print-none">
+                                            <div class="card bg-success-subtle border-success w-100 rounded-4">
+                                                <div class="card-body text-info m-0 p-0"><button class="btn btn-success btn-lg fs-3 p-4 w-100 rounded-4 printButton link-secondary" type="button">Print Resume</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End: Content section -->
+{% endblock %}

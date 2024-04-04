@@ -1,0 +1,318 @@
+{% extends "human_sun_folio/includes/base.html" %}
+{% load static %}        
+{% block content %}   
+        <!-- Start: Content section -->
+        <section class="bg-info min-vh-100">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="container my-5 pb-5">
+                    <div class="row">
+                        <div class="col-12 mt-4 mt-xl-5">
+                            <div class="bg-body border rounded border-0 p-4 p-md-5 position-relative animate__animated animate__slower animate__zoomIn">
+                                <!-- Start: PageIndicator -->
+                                <h1 class="display-6 text-uppercase fw-bolder fs-8vw position-absolute top-0 start-0" style="mix-blend-mode: soft-light;">the project</h1><!-- End: PageIndicator --><a class="border-light position-absolute top-0 end-0 p-2 text-decoration-none" data-bss-hover-animate="pulse" href="{% url 'core:human_sun_home' %}"><i class="la la-close fs-1 text-light border rounded border-2 border-light"></i></a>
+                                <div class="row d-flex">
+                                    <div class="col-12 d-flex align-items-end">
+                                        <div class="flex-fill specialeffect magic-hover">
+                                            <h2 class="text-uppercase fs-3 fw-bold mb-3">Dynamic E-commerce Platform: Building a Python Django Web Store</h2>
+                                            <p class="fs-5 fw-normal lh-sm text-justify">The goal of this project is to develop a dynamic e-commerce platform using Python Django framework. The platform aims to provide a seamless online shopping experience for users while offering robust backend functionality for administrators to manage products, orders, and customer interactions efficiently.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 bg-info mt-5 border rounded-5 border-0"><img class="img-fluid bg-transparent border-0 rounded-top-5" src="{% static 'human_sun_folio/assets/img/project1.webp' %}" loading="lazy" width="100%" height="auto" alt="Main Service Image">
+                                    <div class="card bg-success-subtle border-success flex-fill w-100 rounded-0 rounded-bottom-5" style="/*border-radius: 0;*/">
+                                        <div class="card-body">
+                                            <h2 class="text-uppercase fw-bold text-success magic-hover specialeffect">Project requirements</h2>
+                                            <ul class="list-unstyled fs-4 lh-sm">
+                                                <li class="text-justify"><i class="la la-space-shuttle text-success p-1"></i><span class="text-warning">Create a user-friendly interface for customers to browse products, add them to cart, and proceed to checkout.</span></li>
+                                                <li class="text-justify"><i class="la la-space-shuttle text-success p-1"></i><span class="text-warning">Implement authentication and authorization mechanisms to ensure secure user accounts and administrative access.</span></li>
+                                                <li class="text-justify"><i class="la la-space-shuttle text-success p-1"></i><span class="text-warning">Develop a product management system for administrators to add, update, and delete products, as well as manage inventory.</span></li>
+                                                <li class="text-justify"><i class="la la-space-shuttle text-success p-1"></i><span class="text-warning">Integrate payment gateways to facilitate secure online transactions.</span></li>
+                                                <li class="text-justify"><i class="la la-space-shuttle text-success p-1"></i><span class="text-warning">Implement order management functionalities, including order tracking and status updates.</span></li>
+                                                <li class="text-justify"><i class="la la-space-shuttle text-success p-1"></i><span class="text-warning">Ensure responsiveness and cross-browser compatibility for optimal user experience across devices.</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center align-items-start p-2 p-lg-3">
+                                        <div class="col-12">
+                                            <div class="row gx-3 gy-3 d-flex justify-content-center align-items-center">
+                                                <!-- Start: scoope and outcome -->
+                                                <div class="col-12"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-chat-right-dots text-success fs-8vw magic-hover specialeffect">
+                                                        <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"></path>
+                                                        <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                                                    </svg>
+                                                    <div class="card bg-transparent flex-fill border-0">
+                                                        <div class="row gp-2">
+                                                            <div class="col-md-4 d-none d-md-flex flex-column flex-fill align-items-center pb-3">
+                                                                <div class="card bg-warning-subtle bg-gradient border-warning flex-fill w-100 rounded-5">
+                                                                    <div class="card-body text-center d-flex justify-content-center align-items-center">
+                                                                        <h2 class="fw-bolder fs-1xx font-outline">1</h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 d-flex flex-column flex-fill align-items-center pb-3">
+                                                                <div class="card bg-warning-subtle border-warning flex-fill w-100 rounded-5">
+                                                                    <div class="card-body">
+                                                                        <h2 class="blog-section-heading">Project Scoope One</h2>
+                                                                        <p class="text-capitalize fs-5 text-success-emphasis card-text lh-sm text-justify">The first phase of the project involves setting up the basic infrastructure of the e-commerce platform. This includes:</p>
+                                                                        <ul class="fs-5 text-success-emphasis lh-sm">
+                                                                            <li class="text-justify">Setting up Django project structure</li>
+                                                                            <li class="text-justify">Creating models for products, users, orders, and other necessary entities</li>
+                                                                            <li class="text-justify">Implementing user authentication and registration functionality</li>
+                                                                            <li class="text-justify">Designing the layout and basic functionality of the customer-facing website</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-8 d-flex flex-column flex-fill justify-content-center align-items-center pt-0 pb-3">
+                                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5">
+                                                                    <div class="card-body">
+                                                                        <h2 class="text-success-emphasis side-block-title">Outcome from Scoope one</h2>
+                                                                        <p class="fs-5 text-success-emphasis card-text lh-sm text-justify">By completing the first phase, we have successfully established the foundation of the e-commerce platform. Users can now register, login, and navigate the website to view products. Additionally, administrators have the ability to manage user accounts and basic product information.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 d-none d-md-flex flex-column flex-fill justify-content-center align-items-center pt-0 pb-3">
+                                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5">
+                                                                    <div class="card-body d-flex justify-content-center align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-square text-success-emphasis fs-1xx">
+                                                                            <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"></path>
+                                                                            <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"></path>
+                                                                        </svg></div>
+                                                                </div>
+                                                            </div><!-- Start: scoope images -->
+                                                            <div class="col-12 flex-column flex-fill justify-content-center align-items-center pb-3">
+                                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5 overflow-hidden p-3">
+                                                                    <h3 class="text-success-emphasis ms-3 side-block-title">Scoope One Visualization</h3>
+                                                                    <ul class="list-inline row mb-0 gx-0" id="glitgal">
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox1 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/1.png' %}" data-gallery="glitgal">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/1.png' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox1 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/2.png' %}" data-gallery="glitgal">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/2.png' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox1 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/3.webp' %}" data-gallery="glitgal">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/3.webp' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox1 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/4.webp' %}" data-gallery="glitgal">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/4.webp' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div><!-- End: scoope images -->
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End: scoope and outcome -->
+                                                <!-- Start: scoope and outcome -->
+                                                <div class="col-12"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-chat-right-dots text-success fs-8vw magic-hover specialeffect">
+                                                        <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"></path>
+                                                        <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                                                    </svg>
+                                                    <div class="card bg-transparent flex-fill border-0">
+                                                        <div class="row gp-2">
+                                                            <div class="col-md-4 d-none d-md-flex flex-column flex-fill align-items-center pb-3">
+                                                                <div class="card bg-warning-subtle bg-gradient border-warning flex-fill w-100 rounded-5">
+                                                                    <div class="card-body text-center d-flex justify-content-center align-items-center">
+                                                                        <h2 class="fw-bolder fs-1xx font-outline">2</h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-8 d-flex flex-column flex-fill align-items-center pb-3">
+                                                                <div class="card bg-warning-subtle border-warning flex-fill w-100 rounded-5">
+                                                                    <div class="card-body">
+                                                                        <h2 class="blog-section-heading">Project Scoope Two</h2>
+                                                                        <p class="text-capitalize fs-5 text-success-emphasis card-text lh-sm text-justify">The first phase of the project involves setting up the basic infrastructure of the e-commerce platform. This includes:</p>
+                                                                        <ul class="fs-5 text-success-emphasis lh-sm">
+                                                                            <li class="text-justify">Setting up Django project structure</li>
+                                                                            <li class="text-justify">Creating models for products, users, orders, and other necessary entities</li>
+                                                                            <li class="text-justify">Implementing user authentication and registration functionality</li>
+                                                                            <li class="text-justify">Designing the layout and basic functionality of the customer-facing website</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-8 d-flex flex-column flex-fill justify-content-center align-items-center pt-0 pb-3">
+                                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5">
+                                                                    <div class="card-body">
+                                                                        <h2 class="text-success-emphasis side-block-title">Outcome from Scoope Two</h2>
+                                                                        <p class="fs-5 text-success-emphasis card-text lh-sm text-justify">By completing the first phase, we have successfully established the foundation of the e-commerce platform. Users can now register, login, and navigate the website to view products. Additionally, administrators have the ability to manage user accounts and basic product information.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 d-none d-md-flex flex-column flex-fill justify-content-center align-items-center pt-0 pb-3">
+                                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5">
+                                                                    <div class="card-body d-flex justify-content-center align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-square text-success-emphasis fs-1xx">
+                                                                            <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"></path>
+                                                                            <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"></path>
+                                                                        </svg></div>
+                                                                </div>
+                                                            </div><!-- Start: scoope images -->
+                                                            <div class="col-12 flex-column flex-fill justify-content-center align-items-center pb-3">
+                                                                <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5 overflow-hidden p-3">
+                                                                    <h3 class="text-success-emphasis ms-3 side-block-title">Scoope Two Visualization</h3>
+                                                                    <ul class="list-inline row mb-0 gx-0" id="glitgal-1">
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox2 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/11.webp' %}" data-gallery="glitgal-1">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/11.webp' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox2 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/22.webp' %}" data-gallery="glitgal-1">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/22.webp' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox2 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/33.webp' %}" data-gallery="glitgal-1">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/33.webp' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item border-2 border-success-subtle d-flex flex-column col-sm-6 col-md-4 col-xl-3 overflow-hidden m-0 p-2 glitlist">
+                                                                            <a class="border rounded border-2 border-success-subtle glightbox2 overflow-hidden flex-fill" href="{% static 'human_sun_folio/assets/img/44.webp' %}" data-gallery="glitgal-1">
+                                                                                <img class="img-fluid" src="{% static 'human_sun_folio/assets/img/44.webp' %}" width="100%" height="auto" alt="glightbox image">
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div><!-- End: scoope images -->
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End: scoope and outcome -->
+                                                <!-- Start: Like view -->
+                                                <div class="col-12">
+                                                    <div class="card bg-transparent flex-fill w-100 border-0">
+                                                        <div class="card-body d-flex"><iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fbootstrapstudio.io%2F&amp;layout=standard&amp;action=like&amp;size=small&amp;show_faces=true&amp;share=true" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" width="450" height="80"></iframe></div>
+                                                    </div>
+                                                </div><!-- End: Like view -->
+                                                <!-- Start: other projects -->
+                                                <div class="col-12">
+                                                    <h2 class="text-secondary" style="font-family: Aldrich, sans-serif;">Other Projects</h2>
+                                                    <div class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" id="carousel-otherprojects">
+                                                        <div class="carousel-inner">
+                                                            <div class="carousel-item active">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 d-flex flex-column flex-fill mb-3">
+                                                                        <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                        <div class="card bg-danger-subtle border-danger flex-fill w-100 rounded-5 cardeffectEx">
+                                                                            <div class="card-body">
+                                                                                <div class="d-flex justify-content-between align-items-center py-2">
+                                                                                    <h5 class="fs-5 fw-bolder py-2 text-danger text-justify">Dynamic E-commerce Platform: Building a Python Django Web Store.</h5>
+                                                                                    <div class="d-flex"><a class="text-uppercase fs-5 text-decoration-none badge bg-danger p-2 link-light rounded-5 magic-hover" href="{% url 'core:human_sun_home_pages' 'project_details' %}">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-up-right fs-1">
+                                                                                                <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"></path>
+                                                                                                <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"></path>
+                                                                                            </svg></a></div>
+                                                                                </div>
+                                                                                <div class="lh-sm"><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-danger p-2 link-light rounded-5 me-2" href="#">E-COMMERCE</a><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-danger p-2 link-light rounded-5 me-2" href="#">PYTHON DJANGO WEB DEVELOPMENT</a></div>
+                                                                            </div><img class="img-fluid card-img-bottom w-100 d-block p-4 rounded-5" src="{% static 'human_sun_folio/assets/img/project1.webp' %}" loading="lazy" width="100%" height="auyo" alt="Service Image">
+                                                                        </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                                    </div>
+                                                                    <div class="col-md-6 d-flex flex-column flex-fill mb-3">
+                                                                        <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                        <div class="card bg-secondary-subtle border-secondary flex-fill w-100 rounded-5 cardeffectEx">
+                                                                            <div class="card-body">
+                                                                                <div class="d-flex justify-content-between align-items-center py-2">
+                                                                                    <h5 class="fs-5 fw-bolder text-secondary py-2 text-justify">Creative Branding Website: Showcasing Unique Designs with Bootstrap</h5>
+                                                                                    <div class="d-flex"><a class="text-uppercase fs-5 text-decoration-none badge bg-secondary p-2 link-light rounded-5 magic-hover" href="{% url 'core:human_sun_home_pages' 'project_details' %}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-up-right fs-1">
+                                                                                                <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"></path>
+                                                                                                <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"></path>
+                                                                                            </svg></a></div>
+                                                                                </div>
+                                                                                <div class="lh-sm"><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-secondary p-2 link-light rounded-5 me-2" href="#">WEBSITE BRANDING</a><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-secondary p-2 link-light rounded-5 me-2" href="#">BOOTSTRAP DESIGN</a></div>
+                                                                            </div><img class="img-fluid card-img-bottom w-100 d-block p-4 rounded-5" src="{% static 'human_sun_folio/assets/img/project2.webp' %}" loading="lazy" width="100%" height="auto" alt="Service Image">
+                                                                        </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 d-flex flex-column flex-fill mb-3">
+                                                                        <!-- Start: ProjectCard __ Haradhan Sharma -->
+                                                                        <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5 cardeffectEx">
+                                                                            <div class="card-body">
+                                                                                <div class="d-flex justify-content-between align-items-center py-2">
+                                                                                    <h5 class="fs-5 fw-bolder text-success py-2">Responsive Web Design: Crafting Engaging Interfaces with Bootstrap.</h5>
+                                                                                    <div class="d-flex"><a class="text-uppercase fs-5 text-decoration-none badge bg-success p-2 link-light rounded-5 magic-hover" href="{% url 'core:human_sun_home_pages' 'project_details' %}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-up-right fs-1">
+                                                                                                <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"></path>
+                                                                                                <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"></path>
+                                                                                            </svg></a></div>
+                                                                                </div>
+                                                                                <div class="lh-sm"><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-success p-2 link-light rounded-5 me-2" href="#">WEB DESIGN</a><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-success p-2 link-light rounded-5 me-2" href="#">BOOTSTRAP DESIGN</a></div>
+                                                                            </div><img class="img-fluid card-img-bottom w-100 d-block p-4 rounded-5" src="{% static 'human_sun_folio/assets/img/project3.webp' %}" loading="lazy" width="100%" height="auto" alt="Service Image">
+                                                                        </div><!-- End: ProjectCard __ Haradhan Sharma -->
+                                                                    </div>
+                                                                    <div class="col-md-6 d-flex flex-column flex-fill mb-3">
+                                                                        <!-- Start: ProjectCard -->
+                                                                        <div class="card bg-warning-subtle border-warning flex-fill w-100 rounded-5 cardeffectEx">
+                                                                            <div class="card-body">
+                                                                                <div class="d-flex justify-content-between align-items-center py-2">
+                                                                                    <h5 class="fs-5 fw-bolder text-primary py-2">Custom Web Development: Tailored Solutions for Diverse Business Needs.</h5>
+                                                                                    <div class="d-flex"><a class="text-uppercase fs-5 text-decoration-none badge bg-warning p-2 link-light rounded-5 magic-hover" href="{% url 'core:human_sun_home_pages' 'project_details' %}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-up-right fs-1">
+                                                                                                <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"></path>
+                                                                                                <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"></path>
+                                                                                            </svg></a></div>
+                                                                                </div>
+                                                                                <div class="lh-sm"><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-warning p-2 link-light rounded-5 me-2" href="#">WEB DEVELOPMENT</a><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-warning p-2 link-light rounded-5 me-2" href="#">PYTHON DJANGO WEB DEVELOPMENT</a></div>
+                                                                            </div><img class="img-fluid card-img-bottom w-100 d-block p-4 rounded-5" src="{% static 'human_sun_folio/assets/img/project4.webp' %}" loading="lazy" width="100%" height="auto" alt="Service Image">
+                                                                        </div><!-- End: ProjectCard -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="carousel-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-xl-6 d-flex flex-column flex-fill mb-3">
+                                                                        <!-- Start: ProjectCard -->
+                                                                        <div class="card bg-info-subtle border-info flex-fill w-100 rounded-5 cardeffectEx">
+                                                                            <div class="card-body">
+                                                                                <div class="d-flex justify-content-between align-items-center py-2">
+                                                                                    <h5 class="fs-5 fw-bolder text-info py-2">Elegant E-commerce Solution: Enhancing Online Shopping Experiences.</h5>
+                                                                                    <div class="d-flex"><a class="text-uppercase fs-5 text-decoration-none badge bg-info p-2 link-light rounded-5 magic-hover" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-up-right fs-1">
+                                                                                                <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"></path>
+                                                                                                <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"></path>
+                                                                                            </svg></a></div>
+                                                                                </div>
+                                                                                <div class="lh-sm"><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-info p-2 link-light rounded-5 me-2" href="#">E-COMMERCE</a><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-info p-2 link-light rounded-5 me-2" href="#">WEB DEVELOPMENT</a></div>
+                                                                            </div><img class="img-fluid card-img-bottom w-100 d-block p-4 rounded-5" src="{% static 'human_sun_folio/assets/img/project5.webp' %}" loading="lazy" width="100%" height="auto" alt="Service Image">
+                                                                        </div><!-- End: ProjectCard -->
+                                                                    </div>
+                                                                    <div class="col-md-6 d-flex flex-column flex-fill mb-3">
+                                                                        <!-- Start: ProjectCard -->
+                                                                        <div class="card bg-primary-subtle border-primary flex-fill w-100 rounded-5 cardeffectEx">
+                                                                            <div class="card-body">
+                                                                                <div class="d-flex justify-content-between align-items-center py-2">
+                                                                                    <h5 class="fs-5 fw-bolder text-primary py-2">Dynamic E-commerce Platform: Building a Python Django Web Store.</h5>
+                                                                                    <div class="d-flex"><a class="text-uppercase fs-5 text-decoration-none badge bg-primary p-2 link-light rounded-5 magic-hover" href="{% url 'core:human_sun_home_pages' 'project_details' %}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-up-right fs-1">
+                                                                                                <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"></path>
+                                                                                                <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"></path>
+                                                                                            </svg></a></div>
+                                                                                </div>
+                                                                                <div class="lh-sm"><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-primary p-2 link-light rounded-5 me-2" href="#">E-COMMERCE</a><a class="text-uppercase fs-6 fw-light text-decoration-none badge bg-primary p-2 link-light rounded-5 me-2" href="#">PYTHON DJANGO WEB DEVELOPMENT</a></div>
+                                                                            </div><img class="img-fluid card-img-bottom w-100 d-block p-4 rounded-5" src="{% static 'human_sun_folio/assets/img/project1.webp' %}" loading="lazy" width="100%" height="auto" alt="Service Image">
+                                                                        </div><!-- End: ProjectCard -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="carousel-indicators"><button type="button" data-bs-target="#carousel-otherprojects" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel-otherprojects" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-otherprojects" data-bs-slide-to="2"></button></div>
+                                                    </div>
+                                                </div><!-- End: other projects -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End: Content section -->
+        {% endblock %}

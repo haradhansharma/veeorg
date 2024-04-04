@@ -315,12 +315,12 @@ def create_blog(request):
             try:
                 count = 1
                 for section in sections:                    
-                    prompt = "Please write the blog content precisely and comprehensively for the following section of the outline. Focus on this section only as I will ask about the next sections separately.\n\n"
+                    prompt = "Please write the blog content. The content should look like written by human. Focus on this section only as I will ask about the next sections separately.\n\n"
                     prompt += "For each section, please provide well-researched and original content, avoiding duplication from previous sections. Make sure the information is up-to-date, SEO optimized and relevant.\n\n"
                     prompt += "When writing the content, consider the following:\n"
-                    prompt += "- Provide a clear and friendly explanation of the topic.\n"
+                    prompt += "- Provide a clear and friendly explanation of the topic. But ofcourse it should look like writen by human.\n"
                     prompt += "- Include any necessary data, tables, or lists to support your explanation.\n"
-                    prompt += "- Ensure that the content is free of plagiarism by using your own words and properly attributing any sources used.\n\n"
+                    prompt += "- Again Ensure that the content looking written by human.\n\n"
                     prompt += f"Blog Topic: {topic_title}\n\n"
                     prompt += f"Section Outline: {section['outline']}\n\n"  
                     prompt += f"Please keep in mind that you are writing section {count} out of {len(sections)}, so please keep consistency with previous sections. \n\n"  

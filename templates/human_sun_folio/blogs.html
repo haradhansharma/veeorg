@@ -1,0 +1,139 @@
+{% extends "human_sun_folio/includes/base.html" %}
+{% load static %}        
+{% block content %}  
+        <!-- Start: Content section -->
+        <section class="bg-success bg-opacity-75 min-vh-100">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="container my-5 pb-5" style="opacity: 1;">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center mt-4 mt-xl-5">
+                            <div class="text-white bg-body border rounded border-0 p-4 p-md-5 position-relative animate__animated animate__slower animate__zoomIn">
+                                <!-- Start: PageIndicatorShading -->
+                                <h1 class="display-6 text-uppercase fw-bolder fs-8vw position-absolute top-0 start-0 d-flex specialeffect magic-hover" style="mix-blend-mode: soft-light;">blogs</h1><!-- End: PageIndicatorShading --><a class="border-light position-absolute top-0 end-0 p-2 text-decoration-none" data-bss-hover-animate="pulse" href="{% url 'core:human_sun_home' %}"><i class="la la-close fs-1 text-light border rounded border-2 border-light"></i></a>
+                                <div class="row d-flex">
+                                    <div class="col-lg-8 d-flex align-items-center">
+                                        <div class="flex-fill">
+                                            <h2 class="text-uppercase fs-3 fw-bold mb-3">senses and publications</h2>
+                                            <p class="fs-5 fw-normal lh-sm">Dive into insightful discussions and industry insights on the blog page of Haradhan Sharma's portfolio site. Explore articles covering web development, e-commerce strategies, textile design, and more, crafted with expertise and a passion for sharing knowledge</p><!-- Start: Search Form -->
+                                            <form>
+                                                <div class="input-group"><input class="form-control" type="text" placeholder="Search senses with any text in the title and body"><button class="btn btn-light" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search">
+                                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                                                        </svg></button></div>
+                                            </form><!-- End: Search Form -->
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 d-flex">
+                                        <div class="d-none d-lg-flex flex-fill magic-hover specialeffectImage"><img class="img-fluid" src="{% static 'human_sun_folio/assets/img/snp.svg' %}" width="100%" height="auto" alt="sense and publictions" loading="lazy"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 bg-info mt-5 border rounded-5 border-0">
+                                    <div class="row gx-3 gy-3 p-2 p-lg-5">
+                                        <div class="col-md-6 d-flex flex-fill mt-0 mb-3">
+                                            <div class="card bg-success-subtle border-success flex-fill w-100 rounded-5 cardeffectEx"><img class="img-fluid card-img-top w-100 d-block p-3 rounded-5" src="{% static 'human_sun_folio/assets/img/blog1-1.webp' %}" loading="lazy" width="auto" height="auto" alt="Blog main Image">
+                                                <div class="card-body text-success">
+                                                    <div class="d-flex justify-content-between align-items-center py-2">
+                                                        <p class="text-uppercase fs-5 lh-sm mb-0">12 mar, 2023</p>
+                                                        <div class="d-flex"><a class="text-capitalize fs-5 text-decoration-none badge bg-success p-2 link-light rounded-5" href="#">coding</a></div>
+                                                    </div>
+                                                    <h5 class="fs-5 fw-bolder card-title py-2">Mastering Python: A Compreh.......</h5>
+                                                </div>
+                                                <div class="card-footer bg-success rounded-bottom-5"><a class="d-flex justify-content-between p-2 magic-hover text-decoration-none link-light" href="{% url 'core:human_sun_home_pages' 'blog_details' %}">
+                                                        <p class="text-capitalize fs-5 lh-sm mb-0">Read more</p><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right">
+                                                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path>
+                                                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path>
+                                                        </svg>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-fill mt-0 mb-3">
+                                            <div class="card bg-danger-subtle border-danger flex-fill w-100 rounded-5 cardeffectEx"><img class="img-fluid card-img-top w-100 d-block p-3 rounded-5" src="{% static 'human_sun_folio/assets/img/blog1-1.webp' %}" loading="lazy" width="auto" height="auto" alt="Blog main Image">
+                                                <div class="card-body text-danger">
+                                                    <div class="d-flex justify-content-between align-items-center py-2">
+                                                        <p class="text-uppercase fs-5 lh-sm mb-0">12 mar, 2023</p>
+                                                        <div class="d-flex"><a class="text-capitalize fs-5 text-decoration-none badge bg-danger p-2 link-light rounded-5" href="#">coding</a></div>
+                                                    </div>
+                                                    <h5 class="fs-5 fw-bolder card-title py-2">Mastering Python: A Compreh.......</h5>
+                                                </div>
+                                                <div class="card-footer bg-danger rounded-bottom-5"><a class="d-flex justify-content-between p-2 magic-hover text-decoration-none link-light" href="{% url 'core:human_sun_home_pages' 'blog_details' %}">
+                                                        <p class="text-capitalize fs-5 lh-sm mb-0">Read more</p><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right">
+                                                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path>
+                                                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path>
+                                                        </svg>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-fill mt-0 mb-3">
+                                            <div class="card bg-secondary-subtle border-secondary flex-fill w-100 rounded-5 cardeffectEx"><img class="img-fluid card-img-top w-100 d-block p-3 rounded-5" src="{% static 'human_sun_folio/assets/img/blog1-1.webp' %}" loading="lazy" width="auto" height="auto" alt="Blog main Image">
+                                                <div class="card-body text-secondary">
+                                                    <div class="d-flex justify-content-between align-items-center py-2">
+                                                        <p class="text-uppercase fs-5 lh-sm mb-0">12 mar, 2023</p>
+                                                        <div class="d-flex"><a class="text-capitalize fs-5 text-decoration-none badge bg-secondary p-2 link-light rounded-5" href="#">coding</a></div>
+                                                    </div>
+                                                    <h5 class="fs-5 fw-bolder card-title py-2">Mastering Python: A Compreh.......</h5>
+                                                </div>
+                                                <div class="card-footer bg-secondary rounded-bottom-5"><a class="d-flex justify-content-between p-2 magic-hover text-decoration-none link-light" href="{% url 'core:human_sun_home_pages' 'blog_details' %}">
+                                                        <p class="text-capitalize fs-5 lh-sm mb-0">Read more</p><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right">
+                                                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path>
+                                                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path>
+                                                        </svg>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-fill mt-0 mb-3">
+                                            <div class="card bg-warning-subtle border-warning flex-fill w-100 rounded-5 cardeffectEx"><img class="img-fluid card-img-top w-100 d-block p-3 rounded-5" src="{% static 'human_sun_folio/assets/img/blog1-1.webp' %}" loading="lazy" width="auto" height="auto" alt="Blog main Image">
+                                                <div class="card-body text-warning">
+                                                    <div class="d-flex justify-content-between align-items-center py-2">
+                                                        <p class="text-uppercase fs-5 lh-sm mb-0">12 mar, 2023</p>
+                                                        <div class="d-flex"><a class="text-capitalize fs-5 text-decoration-none badge bg-warning p-2 link-primary rounded-5" href="#">coding</a></div>
+                                                    </div>
+                                                    <h5 class="fs-5 fw-bolder card-title py-2">Mastering Python: A Compreh.......</h5>
+                                                </div>
+                                                <div class="card-footer bg-warning rounded-bottom-5"><a class="d-flex justify-content-between p-2 magic-hover text-decoration-none link-light" href="{% url 'core:human_sun_home_pages' 'blog_details' %}">
+                                                        <p class="text-capitalize fs-5 lh-sm mb-0">Read more</p><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right">
+                                                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path>
+                                                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path>
+                                                        </svg>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-fill mt-0 mb-3">
+                                            <div class="card bg-danger-subtle border-danger flex-fill w-100 rounded-5 cardeffectEx"><img class="img-fluid card-img-top w-100 d-block p-3 rounded-5" src="{% static 'human_sun_folio/assets/img/blog1-1.webp' %}" loading="lazy" width="auto" height="auto" alt="Blog main Image">
+                                                <div class="card-body text-danger">
+                                                    <div class="d-flex justify-content-between align-items-center py-2">
+                                                        <p class="text-uppercase fs-5 lh-sm mb-0">12 mar, 2023</p>
+                                                        <div class="d-flex"><a class="text-capitalize fs-5 text-decoration-none badge bg-danger p-2 link-light rounded-5" href="#">coding</a></div>
+                                                    </div>
+                                                    <h5 class="fs-5 fw-bolder card-title py-2">Mastering Python: A Compreh.......</h5>
+                                                </div>
+                                                <div class="card-footer bg-danger rounded-bottom-5"><a class="d-flex justify-content-between p-2 magic-hover text-decoration-none link-light" href="{% url 'core:human_sun_home_pages' 'blog_details' %}">
+                                                        <p class="text-capitalize fs-5 lh-sm mb-0">Read more</p><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right">
+                                                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path>
+                                                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path>
+                                                        </svg>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex py-3">
+                                    <div class="col d-flex justify-content-center align-items-center align-content-center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-left-circle text-primary">
+                                                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"></path>
+                                                </svg></li>
+                                            <li class="list-inline-item mx-2">1</li>
+                                            <li class="list-inline-item text-success mx-2">2</li>
+                                            <li class="list-inline-item mx-2">3</li>
+                                            <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right-circle text-primary">
+                                                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"></path>
+                                                </svg></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End: Content section -->
+        {% endblock %}

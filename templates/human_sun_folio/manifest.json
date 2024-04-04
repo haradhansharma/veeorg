@@ -1,0 +1,23 @@
+{% load static %}
+{
+  "short_name": "Human Sun",
+  "name": "Human Sun Folio",
+  "icons": [
+    {
+      "src": "{% static 'human_sun_folio/assets/img/humn_sun_picture_about.png' %}",
+      "type": "image/png",
+      "sizes": "896x896",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "{% static 'human_sun_folio/assets/img/humn_sun_picture_about.png' %}",
+      "type": "image/png",
+      "sizes": "896x896",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "{% url 'core:human_sun_home' %}",
+  "background_color": "#a6034f",
+  "theme_color": "#a6034f",
+  "display": "fullscreen"
+}
